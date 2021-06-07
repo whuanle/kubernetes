@@ -1,6 +1,10 @@
-# 1.学习目标
+# 第三章：Pod部署和调度
 
-**部署、配置、标签选择、调度**
+
+
+### 学习目标
+
+**部署、配置、标签选择、调度、副本、控制器**
 
 * 讨论部署配置细节
   * 通过 `kubectl create/apply` 创建 Deployment ，部署 Pod；
@@ -25,6 +29,7 @@
   * 配置污点和容忍度
   * 系统默认污点、master 的调度配置
   * DaemonSet
+
 * Job 和 CronJob
   * 了解 Job，完成数\(conpetions\)、工作队列\(parallelism\)、控制并行性、清理 Job。
   * CronJob 的时间表示
