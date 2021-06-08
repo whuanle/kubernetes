@@ -15,6 +15,7 @@
 * 向上和向下扩展部署。
   * 扩容 Pod，设置副本集，`kubectl scale`、`kubectl edit`；
   * 自动扩容 Pod，水平缩放，比例缩放，根据 CPU、内存缩放，`kubectl autoscale`；
+  * DaemonSet
 * 实现滚动更新和回滚
   * 更换镜像版本、更新 Pod，`kubectl set image`；
   * 设置滚动更新速度，`maxSurge`、`maxUnavailable`；
@@ -28,8 +29,7 @@
   * 亲和性和反亲和性
   * 配置污点和容忍度
   * 系统默认污点、master 的调度配置
-  * DaemonSet
-
+  
 * Job 和 CronJob
   * 了解 Job，完成数\(conpetions\)、工作队列\(parallelism\)、控制并行性、清理 Job。
   * CronJob 的时间表示

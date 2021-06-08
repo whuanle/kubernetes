@@ -20,7 +20,7 @@
   * [3.4 副本集(ReplicaSet)](3.pod/4.replica.md)
   * [3.5 Pod 升级、回滚](3.pod/5.update.md)
   * [3.6 Pod 缩放](3.pod/6.scale.md)
-  * [3.7.Pod标签](3.pod/4.label.md)
+  * [3.7.Pod 标签](3.pod/4.label.md)
   * [3.8 Pod 调度](3.pod/8.schedule.md)
   * [3.9 Job、CronJobs](3.pod/9.job_cronjobs.md)
 * [4.Service和Ingress](4.service-he-ingress/README.md)
