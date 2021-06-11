@@ -1,11 +1,11 @@
 # 教程目录
 
 * [文档说明](README.md)
-* [1.基础知识](1.base/README.md)
-  * [导读](1.base/README.md)
-  * [1.1 了解 Kubernetes](1.base/1.basic.md)
-  * [1.2 容器与 Pod](1.base/2.containerized.md)
-  * [1.3 Master 节点](1.base/3.master.md)
+* [1.基础知识](1.basic/README.md)
+  * [导读](1.basic/README.md)
+  * [1.1 了解 Kubernetes](1.basic/1.basic.md)
+  * [1.2 容器与 Pod](1.basic/2.containerized.md)
+  * [1.3 Master 节点](1.basic/3.master.md)
 * [2.部署和配置](2.deploy/README.md)
   * [导读](2.deploy/README.md)
   * [2.1 使用 Minikube 部署](2.deploy/1.minikube.md)
