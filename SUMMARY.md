@@ -1,11 +1,11 @@
 # 教程目录
 
 * [文档说明](README.md)
-* [1.基础知识](1.basic_knowledge/README.md)
-  * [导读](1.basic_knowledge/README.md)
-  * [1.1 Kubernetes 入门基础](1.basic_knowledge/1.kubernetes_basic.md)
-  * [1.2 Kubernetes的组成](1.basic_knowledge/2.kubernetes_constitute.md)
-  * [1.3 了解组件](1.basic_knowledge/3.kubernetes_struct.md)
+* [1.基础知识](1.base/README.md)
+  * [导读](1.base/README.md)
+  * [1.1 了解 Kubernetes](1.base/1.basic.md)
+  * [1.2 容器与 Pod](1.base/2.containerized.md)
+  * [1.3 Master 节点](1.base/3.master.md)
 * [2.部署和配置](2.deploy/README.md)
   * [导读](2.deploy/README.md)
   * [2.1 使用 Minikube 部署](2.deploy/1.minikube.md)
@@ -51,8 +51,8 @@
   * [抓包](9.-ri-zhi-he-gu-zhang-pai-chu/zhua-bao.md)
   * [教程](9.-ri-zhi-he-gu-zhang-pai-chu/jiao-cheng.md)
   * [新建文本文档](9.-ri-zhi-he-gu-zhang-pai-chu/xin-jian-wen-ben-wen-dang.md)
-* [course introduction](course-introduction.md)
-* [技巧与提示](ji-qiao-yu-ti-shi.md)
+* [courseintroduction](courseintroduction.md)
+* [技巧与提示](jiqiao.md)
 * [Readme](undefined.md)
 * [考试规定](kao-shi-gui-ding.md)
 
