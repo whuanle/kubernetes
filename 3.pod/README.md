@@ -34,3 +34,24 @@
   * 了解 Job，完成数\(conpetions\)、工作队列\(parallelism\)、控制并行性、清理 Job。
   * CronJob 的时间表示
 
+
+
+掌握以下命令的使用：
+
+kubectl
+
+kubectl 原理是请求 apiserver 完成某些操作，日常操作中，最常用的就是 kubectl。
+
+`kubectl create {对象}` ，创建 deployment、job 等对象。
+
+`kubectl apply -f` 应用 yaml 文件，完成某些操作。
+
+`kubectl get {对象}` 查询对象。
+
+`kubectl scale {对象}` 伸缩对象数量\(ReplicaSet\)。
+
+`kubectl expose` 创建 Service。
+
+`kubectl describe` 获取对象详细的信息。
+
+`kubectl exec` 在对象中执行命令，例如 pod。

@@ -53,6 +53,8 @@ kubectl describe quota --namespace <namespace-name>
 
 一般容器都会自带 bash 或者 sh 的，所以我们使用 `kubectl exec {pod名称} -- {命令}` 能够在 pod 中执行命令。
 
+`--` 表示前半部分命令已经结束 
+
 这里我们可以使用 nginx 进行测试，先部署一个 Nginx：
 
 ```text
