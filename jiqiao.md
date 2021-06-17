@@ -13,3 +13,28 @@
 export KUBE_EDITOR="nano"
 ```
 
+
+
+kubectl 命令格式：
+
+```shell
+kubectl [command] [type] [Name] [flag]
+```
+
+
+
+| **all**                                             | **events** (**ev**)                    | **podsecuritypolicies** (**psp**)   |
+| --------------------------------------------------- | -------------------------------------- | ----------------------------------- |
+| **certificatesigningrequests** (**csr**)            | **horizontalpodautoscalers** (**hpa**) | **podtemplates**                    |
+| **clusterrolebindings**                             | **ingresses** (**ing**)                | **replicasets** (**rs**)            |
+| **clusterroles**                                    | **jobs**                               | **replicationcontrollers** (**rc**) |
+| **clusters** (valid only for federation apiservers) | **limitranges** (**limits**)           | **resourcequotas** (**quota**)      |
+| **componentstatuses** (**cs**)                      | **namespaces** (**ns**)                | **rolebindings**                    |
+| **configmaps** (**cm**)                             | **networkpolicies** (**netpol**)       | **roles**                           |
+| **controllerrevisions**                             | **nodes** (**no**)                     | **secrets**                         |
+| **cronjobs**                                        | **persistentvolumeclaims** (**pvc**)   | **serviceaccounts** (**sa**)        |
+| **customresourcedefinition** (**crd**)              | **persistentvolumes** (**pv**)         | **services** (**svc**)              |
+| **daemonsets** (**ds**)                             | **poddisruptionbudgets** (**pdb**)     | **statefulsets**                    |
+| **deployments** (**deploy**)                        | **podpreset**                          | **storageclasses**                  |
+| **endpoints** (**ep**)                              | **pods** (**po**)                      |                                     |
+
