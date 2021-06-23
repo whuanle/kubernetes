@@ -1,8 +1,12 @@
-# 第五章：volumes
+# 第五章：卷
 
-理解并创建持久卷。
+了解卷；
 
-配置持久卷声明。
+学会创建 emtpydir、Hostpath、ntfs 卷。
+
+理解并创建持久卷(PV)。
+
+配置持久卷声明(PVC)。
 
 管理卷访问方式。
 
@@ -10,5 +14,5 @@
 
 讨论存储的动态配置。
 
-配置秘密和ConfigMaps
+配置 Secret 和 ConfigMaps
 
