@@ -12,7 +12,7 @@
   * [2.2 使用 kubeadm 部署](2.deploy/2.kubeadm.md)
   * [2.3 CKAD认证中的部署教程](2.deploy/3.kubeadm_ckad.md)
   * [2.4 国内代理](2.deploy/4.kubeadm_proxy.md)
-  * [2.5 Dashboard](2.deploy/5.dashboardmd)
+  * [2.5 Dashboard](2.deploy/5.dashboard.md)
 * [3.Pod部署和调度](3.pod/README.md)
   * [导读](3.pod/README.md)
   * [3.1 Pod](3.pod/1.pod.md)
