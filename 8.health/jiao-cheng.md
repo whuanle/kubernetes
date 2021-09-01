@@ -8,7 +8,7 @@
 systemctl status kubelet.service
 ```
 
-!\[1620004583\(1\)\]\(./.images/1620004583\(1\).png\)
+![1620004583](./.images/1620004583\(1\).png)
 
 kubelet.service 的配置文件可在 `/etc/systemd/system/kubelet.service.d/10-kubeadm.conf` 中找到。
 
