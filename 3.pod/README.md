@@ -1,8 +1,6 @@
-# 第三章：Pod部署和调度
+# 3.Pod部署和调度
 
-
-
-### 学习目标
+## 学习目标
 
 **部署、配置、标签选择、调度、副本、控制器**
 
@@ -29,12 +27,9 @@
   * 亲和性和反亲和性
   * 配置污点和容忍度
   * 系统默认污点、master 的调度配置
-  
 * Job 和 CronJob
-  * 了解 Job，完成数\(conpetions\)、工作队列\(parallelism\)、控制并行性、清理 Job。
+  * 了解 Job，完成数(conpetions)、工作队列(parallelism)、控制并行性、清理 Job。
   * CronJob 的时间表示
-
-
 
 掌握以下命令的使用：
 
@@ -48,7 +43,7 @@ kubectl 原理是请求 apiserver 完成某些操作，日常操作中，最常�
 
 `kubectl get {对象}` 查询对象。
 
-`kubectl scale {对象}` 伸缩对象数量\(ReplicaSet\)。
+`kubectl scale {对象}` 伸缩对象数量(ReplicaSet)。
 
 `kubectl expose` 创建 Service。
 

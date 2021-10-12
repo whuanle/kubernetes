@@ -1,6 +1,8 @@
-# 第四章：Service和Ingress
+# 4.Service和Ingress
 
-# 1.学习目标
+## 第四章：Service和Ingress
+
+## 1.学习目标
 
 **服务与网络 - 13％**
 
@@ -32,11 +34,10 @@
 
 对于 Ingress 的内容，需要了解那些知识和概念，对于实践方面，需要学会配置规则即可。
 
-**高可用\(HIGH AVAILABILITY\)**
+**高可用(HIGH AVAILABILITY)**
 
 讨论Kubernetes中的高可用性。
 
 讨论并置数据库和非并置数据库。
 
 学习Kubernetes中实现高可用性的步骤。
-

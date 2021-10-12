@@ -4,15 +4,15 @@
 
 当我们使用 kubeadm 创建集群，kubeadm/集群 会在 Linux 的 `systemd` 中开始启动。由于 kubelet 会在每个节点上运行，通过这个程序也可以查看节点的健康状态。
 
-```text
+```
 systemctl status kubelet.service
 ```
 
-![1620004583](./.images/1620004583\(1\).png)
+![1620004583](../.gitbook/assets/1620004583\(1\).png)
 
 kubelet.service 的配置文件可在 `/etc/systemd/system/kubelet.service.d/10-kubeadm.conf` 中找到。
 
-```text
+```
 ...
 kubeconfig=/etc/kubernetes/kubelet.conf"
 Environment="KUBELET_CONFIG_ARGS=--config=/var/lib/kubelet/config.yaml"
@@ -23,28 +23,28 @@ EnvironmentFile=-/var/lib/kubelet/kubeadm-flags.env
 
 ## 检查 Pod 日志
 
-首先，查看受到影响的容器的日志\(正在运行\)：
+首先，查看受到影响的容器的日志(正在运行)：
 
-```text
+```
 kubectl logs ${Pod名称}
 kubectl logs ${Pod名称} ${容器名称}
 ```
 
 如果容器之前崩溃过，可以通过下面命令访问之前容器的崩溃日志：
 
-```text
+```
 kubectl logs --previous ${Pod名称} ${容器名称}
 ```
 
 查看事件：
 
-```text
+```
 kubectl get events --namespace <namespace-name> --sort-by='{.lastTimestamp}'
 ```
 
 查看 Pod 是否因为资源限制出现问题：
 
-```text
+```
 kubectl describe quota
 kubectl describe quota --namespace <namespace-name>
 ```
@@ -53,23 +53,23 @@ kubectl describe quota --namespace <namespace-name>
 
 一般容器都会自带 bash 或者 sh 的，所以我们使用 `kubectl exec {pod名称} -- {命令}` 能够在 pod 中执行命令。
 
-`--` 表示前半部分命令已经结束 
+`--` 表示前半部分命令已经结束
 
 这里我们可以使用 nginx 进行测试，先部署一个 Nginx：
 
-```text
+```
 kubectl create deployment nginx --image=nginx:latest
 ```
 
 查看 pod 列表，然后在 pod 中执行命令
 
-```text
+```
 kubectl exec -it nginx-55649fd747-7fkh2 -- ls
 ```
 
 命令格式：
 
-```text
+```
 kubectl exec ${POD_NAME} -c ${CONTAINER_NAME} -- ${CMD} ${ARG1} ${ARG2} ... ${ARGN}
 ```
 
@@ -83,15 +83,14 @@ kubectl-debug 文档地址：[https://github.com/aylei/kubectl-debug/blob/master
 
 开启 EphemeralContainers 特性：
 
-```text
-
+```
 ```
 
 ## 通过副本调试
 
 为 Pod 创建一个副本，并且进入调试，输入 exit 可退出调试。
 
-```text
+```
 kubectl debug nginx-55649fd747-7fkh2 -it --copy-to=nginx --container=nginx -- sh
 ```
 
@@ -99,7 +98,7 @@ kubectl debug nginx-55649fd747-7fkh2 -it --copy-to=nginx --container=nginx -- sh
 
 在 master 节点上执行：
 
-```text
+```
 find / -name *apiserver*log
 ```
 
@@ -107,11 +106,11 @@ find / -name *apiserver*log
 
 或者通过 `kubectl logs` 命令直接查看 pod 的日志：
 
-```text
+```
 kubectl get pods -n kube-system
 ```
 
-```text
+```
 kubectl logs {kube-apiserver名称} -n kube-system
 ```
 
@@ -121,30 +120,30 @@ kubectl logs {kube-apiserver名称} -n kube-system
 
 文档可参考：[https://github.com/kubernetes-incubator/metrics-server](https://github.com/kubernetes-incubator/metrics-server)
 
-```text
+```
 kubectl create -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.7/components.yaml
 ```
 
 查看 pods，有个 `metrics-server` Pod：
 
-```text
+```
 kubectl -n kube-system get pod
 ```
 
-```text
+```
 NAME                                       READY   STATUS    RESTARTS   AGE
 metrics-server-68b849498d-tk6zl            1/1     Running   0          71s
 ```
 
 修改 deployment
 
-```text
+```
 kubectl -n kube-system edit deployment metrics-server
 ```
 
 在 args 后面增加两行参数，最终：
 
-```text
+```
     spec:
       containers:
       - args:
@@ -156,12 +155,11 @@ kubectl -n kube-system edit deployment metrics-server
 
 查看 日志
 
-```text
+```
 kubectl -n kube-system logs metrics-server-67cd7bd5f6-z7ggh
 ```
 
-```text
+```
 I0503 03:03:10.999187       1 serving.go:312] Generated self-signed cert (/tmp/apiserver.crt, /tmp/apiserver.key)
 I0503 03:03:11.416552       1 secure_serving.go:116] Serving securely on [::]:4443
 ```
-
