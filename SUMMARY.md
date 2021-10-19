@@ -1,16 +1,13 @@
-# 教程目录
+# Table of contents
 
 * [文档说明](README.md)
 * [1.基础知识](1.basic/README.md)
   * [导读](1.basic/README.md)
-  * [1.1 Docker](1.basic/1.docker.md)
-  * [1.2 Docker 网络与存储](1.basic/2.docker_ns.md)
-  * [1.3 虚拟化技术](1.basic/3.virtual.md)
-  * [1.4 容器与 Pod](1.basic/4.pod_docker.md)
-  * [1.5 了解 Kubernetes](1.basic/5.k8s.md)
-  * [1.6 K8S 组件](1.basic/6.struct.md)
+  * [1.1 了解 Kubernetes](1.basic/1.basic.md)
+  * [1.2 容器与 Pod](1.basic/2.containerized.md)
+  * [1.3 Master 节点](1.basic/3.master.md)
 * [2.部署和配置](2.deploy/README.md)
-  * [导读](2.deploy/README.md)
+  * [导读](2.deploy/2.deploy.md)
   * [2.1 使用 Minikube 部署](2.deploy/1.minikube.md)
   * [2.2 使用 kubeadm 部署](2.deploy/2.kubeadm.md)
   * [2.3 CKAD认证中的部署教程](2.deploy/3.kubeadm_ckad.md)

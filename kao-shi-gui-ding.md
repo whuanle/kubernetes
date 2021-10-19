@@ -56,8 +56,8 @@
 * 您的主要ID上的姓名**必须与** 您的检查清单上[经过验证的姓名](https://docs.linuxfoundation.org/tc-docs/certification/lf-candidate-handbook/exam-preparation-checklist#checklist-items)**完全匹配**。
 * 如果考生在其主要ID上的全名包含非拉丁字符，则考生还必须提供一个未过期的次要ID，其中应包含其全名以拉丁字符和签名，或者他们的主要ID的公证英文翻译以及非-拉丁字符主要ID
 
-| 主ID（未过期，包括照片和签名） | _次要编号_（未过期，包括签名）  带有拉丁字符的候选名称） |
-| :--- | :--- |
+| 主ID（未过期，包括照片和签名）                                                                    | _次要编号_（未过期，包括签名）  带有拉丁字符的候选名称）         |
+| ----------------------------------------------------------------------------------- | -------------------------------------- |
 | 护照政府签发的驾驶执照/许可证政府签发的本地语言ID（带照片和签名）国民身份证州或省发行的身份证住民基本台帐（带照片的居民基本登录）或マイナンバーカード（我的身份证） | 借记卡（ATM）信用卡健康保险卡美国社会保障卡员工身份证学生证日本健康保险卡 |
 
 额外津贴：
@@ -65,7 +65,7 @@
 * 一些政府颁发的ID（例如护照，驾照，军事ID或州/国家/地区卡）可能是生物识别类型，可能包含也可能不包含签名。在这些情况下，不带签名的情况下也可以接受主ID，但前提是您还提供包含签名的辅助ID（例如银行，信用卡或借记卡）
 * 对于在日本进行考试的应试者，只要带有日本健康保险卡，就可以将驾驶执照（带有姓名和最近可识别的照片）作为主要身份证件  （健康保険证）。在日本，可以使用日本健康保险卡（secondary ID）的形式
 * 年龄在16至18岁之间的未成年人，只要满足以下要求，就可以参加PSI在线督导考试：
-  * 家长/监护人必须在考试预定日期的至少2周之前填写[“未成年人考试](https://training.linuxfoundation.org/parental-release-for-testing-of-minors/)的[家长发行”](https://training.linuxfoundation.org/parental-release-for-testing-of-minors/)表格，并将其提交到[trainingsupport.linuxfoundation.org](https://trainingsupport.linuxfoundation.org/)。
+  * 家长/监护人必须在考试预定日期的至少2周之前填写[“未成年人考试](https://training.linuxfoundation.org/parental-release-for-testing-of-minors/)的[家长发行”](https://training.linuxfoundation.org/parental-release-for-testing-of-minors/)表格，并将其提交到[trainingsupport.linuxfoundation.org](https://trainingsupport.linuxfoundation.org)。
   * 未成年考生必须在登记入住时出示有效的学生证作为身份证明
   * 在PSI签到过程中，候选人的监护人还必须出示有效的ID，并且必须在PSI签到过程中提供口头同意。
 
@@ -86,9 +86,9 @@
 
 * 查看命令行终端中显示的考试内容说明
 * 查看发行版安装的文档（即/ usr / share及其子目录）
-* 使用其Chrome和Chromium浏览器中打开一个附加选项卡，以获取资产：[https://kubernetes.io/docs/，https://github.com/kubernetes/，](https://kubernetes.io/docs/，https://github.com/kubernetes/，)   [https://kubernetes.io/blog/及其子域。这包括这些页面的所有可用的语言翻译（如\[https://kubernetes.io/zh/docs/）\]\(https://kubernetes.io/zh/docs/home/](https://kubernetes.io/blog/及其子域。这包括这些页面的所有可用的语言翻译（如[https://kubernetes.io/zh/docs/）]%28https://kubernetes.io/zh/docs/home/)\)
+* 使用其Chrome和Chromium浏览器中打开一个附加选项卡，以获取资产：[https://kubernetes.io/docs/，https://github.com/kubernetes/，](https://kubernetes.io/docs/%EF%BC%8Chttps://github.com/kubernetes/%EF%BC%8C)   [https://kubernetes.io/blog/及其子域。这包括这些页面的所有可用的语言翻译（如\[https://kubernetes.io/zh/docs/）\]\(https://kubernetes.io/zh/docs/home/](https://kubernetes.io/blog/%E5%8F%8A%E5%85%B6%E5%AD%90%E5%9F%9F%E3%80%82%E8%BF%99%E5%8C%85%E6%8B%AC%E8%BF%99%E4%BA%9B%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%89%80%E6%9C%89%E5%8F%AF%E7%94%A8%E7%9A%84%E8%AF%AD%E8%A8%80%E7%BF%BB%E8%AF%91%EF%BC%88%E5%A6%82\[https://kubernetes.io/zh/docs/%EF%BC%89]\(https://kubernetes.io/zh/docs/home/))
 
-不能打开其他选项卡，也不能导航到其他站点（包括[https://discuss.kubernetes.io/）。](https://discuss.kubernetes.io/）。)
+不能打开其他选项卡，也不能导航到其他站点（包括[https://discuss.kubernetes.io/）。](https://discuss.kubernetes.io/%EF%BC%89%E3%80%82)
 
 _上面允许的站点可能包含指向外部站点的链接。候选人有责任不单击任何导致他们导航到不允许的域的链接。_
 
@@ -98,20 +98,18 @@ _上面允许的站点可能包含指向外部站点的链接。候选人有责�
 2. 随时可以重新引导服务器。
 3. 不要停止或篡改certerminal过程，因为这将结束您的考试会话。
 4. 不要阻止传入端口8080 / tcp，4505 / tcp和4506 / tcp。这包括在发行版的默认防火墙配置文件中找到的防火墙规则以及交互式防火墙命令。
-5. 使用Ctrl + Alt + W代替Ctrl + W。
+5.  使用Ctrl + Alt + W代替Ctrl + W。
 
-   5.1 Ctrl + W是键盘快捷键，它将关闭Google Chrome中的当前选项卡。
+    5.1 Ctrl + W是键盘快捷键，它将关闭Google Chrome中的当前选项卡。
+6.  您的考试终端不支持Ctrl + C和Ctrl + V。 要复制和粘贴文本，请使用；
 
-6. 您的考试终端不支持Ctrl + C和Ctrl + V。 要复制和粘贴文本，请使用；
+    6.1对于Linux：选择要复制的文本和选择粘贴的中间按钮（如果没有中间按钮，则同时选择左右）。
 
-   6.1对于Linux：选择要复制的文本和选择粘贴的中间按钮（如果没有中间按钮，则同时选择左右）。
+    6.2对于Mac：⌘+ C复制，copy + V粘贴。
 
-   6.2对于Mac：⌘+ C复制，copy + V粘贴。
+    6.3对于Windows：按Ctrl + Insert复制并按Shift + Insert粘贴。
 
-   6.3对于Windows：按Ctrl + Insert复制并按Shift + Insert粘贴。
-
-   6.4此外，您可能会发现在粘贴到命令行之前使用记事本（请参阅“考试控制”下的顶部菜单）来操作文本可能会有所帮助。
-
+    6.4此外，您可能会发现在粘贴到命令行之前使用记事本（请参阅“考试控制”下的顶部菜单）来操作文本可能会有所帮助。
 7. 安装此考试中包含的服务和应用程序可能需要修改系统安全策略才能成功完成。
 8. 考试期间只有一个终端控制台可用。终端多路复用器（例如GNU Screen和tmux）可用于创建虚拟控制台。
 
@@ -121,23 +119,23 @@ _上面允许的站点可能包含指向外部站点的链接。候选人有责�
 * 为了最大程度地减少切换，对任务进行了分组，以使给定群集上的所有问题都连续出现。
 * 构成考试环境的六个群集（CKA）/四个群集（CKAD）由不同数量的容器组成，如下所示：
 
-|  |  | **CKA集群** |  |
-| :--- | :--- | :--- | :--- |
-| **簇** | **会员** | **CNI** | **描述** |
-| k8s | 1个主人，2个工人 | 绒布 | k8s集群 |
-| hk8s | 1个主人，2个工人 | 印花布 | k8s集群 |
-| bk8s | 1个主人，1个工人 | 绒布 | k8s集群 |
-| wk8s | 1个主人，2个工人 | 绒布 | k8s集群 |
-| ek8s | 1个主人，2个工人 | 绒布 | k8s集群 |
-| ik8s | 1个主节点，1个基本节点 | 回送 | k8s群集-缺少工作人员节点 |
+|       |              | **CKA集群** |                |
+| ----- | ------------ | --------- | -------------- |
+| **簇** | **会员**       | **CNI**   | **描述**         |
+| k8s   | 1个主人，2个工人    | 绒布        | k8s集群          |
+| hk8s  | 1个主人，2个工人    | 印花布       | k8s集群          |
+| bk8s  | 1个主人，1个工人    | 绒布        | k8s集群          |
+| wk8s  | 1个主人，2个工人    | 绒布        | k8s集群          |
+| ek8s  | 1个主人，2个工人    | 绒布        | k8s集群          |
+| ik8s  | 1个主节点，1个基本节点 | 回送        | k8s群集-缺少工作人员节点 |
 
-|  |  | **CKAD集群** |  |
-| :--- | :--- | :--- | :--- |
-| **簇** | **会员** | **CNI** | **描述** |
-| k8s | 1个主人，2个工人 | 绒布 | k8s集群 |
-| dk8s | 1个主人，1个工人 | 绒布 | k8s集群 |
-| nk8s | 1个主人，2个工人 | 印花布 | k8s集群 |
-| sk8s | 1个主人，1个工人 | 绒布 | k8s集群 |
+|       |           | **CKAD集群** |        |
+| ----- | --------- | ---------- | ------ |
+| **簇** | **会员**    | **CNI**    | **描述** |
+| k8s   | 1个主人，2个工人 | 绒布         | k8s集群  |
+| dk8s  | 1个主人，1个工人 | 绒布         | k8s集群  |
+| nk8s  | 1个主人，2个工人 | 印花布        | k8s集群  |
+| sk8s  | 1个主人，1个工人 | 绒布         | k8s集群  |
 
 * 在每个任务开始时，将为您提供命令，以确保您位于正确的集群上以完成任务。
 * 可以使用以下命令通过ssh来访问组成每个群集的节点：ssh 
@@ -150,4 +148,3 @@ _上面允许的站点可能包含指向外部站点的链接。候选人有责�
 * 如果未指定显式名称空间，则应使用默认名称空间。
 * 如果您需要销毁/重新创建资源以执行特定任务，则您有责任在销毁资源之前适当备份资源定义。
 * CKA和CKAD环境当前正在运行Kubernetes v1.20。 _CKA，CKS和CKAD考试环境将在K8s发布日期后约4至8周内与最新的K8s次要版本保持一致。_
-

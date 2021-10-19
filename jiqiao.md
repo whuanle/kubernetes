@@ -9,19 +9,15 @@
 
 在使用 `kubectl edit` 编辑对象时，默认使用的时 VI 编辑器，如果需要修改为 nano 编辑器，可以设置环境变量：
 
-```text
+```
 export KUBE_EDITOR="nano"
 ```
 
-
-
 kubectl 命令格式：
 
-```shell
+```
 kubectl [command] [type] [Name] [flag]
 ```
-
-
 
 | **all**                                             | **events** (**ev**)                    | **podsecuritypolicies** (**psp**)   |
 | --------------------------------------------------- | -------------------------------------- | ----------------------------------- |
@@ -37,4 +33,3 @@ kubectl [command] [type] [Name] [flag]
 | **daemonsets** (**ds**)                             | **poddisruptionbudgets** (**pdb**)     | **statefulsets**                    |
 | **deployments** (**deploy**)                        | **podpreset**                          | **storageclasses**                  |
 | **endpoints** (**ep**)                              | **pods** (**po**)                      |                                     |
-
