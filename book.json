@@ -1,0 +1,46 @@
+{
+  "plugins": [
+    "tbfed-pagefooter",
+    "anchor-navigation-ex",
+    "mermaid-gb3",
+    "insert-logo",
+    "chapter-fold",
+    "advanced-emoji",
+    "github",
+    "splitter",
+    "alerts",
+    "popup"
+  ],
+  "title": "Kubernetes - 痴者工良",
+  "author": "痴者工良",
+  "description": "这是一本关于 Kubernetes 的书，作者 痴者工良",
+  "language": "zh-hans",
+  "links": {
+    "sidebar": {
+      "作者博客": "https://www.whuanle.cn"
+    }
+  },
+  "pluginsConfig": {
+    "tbfed-pagefooter": {
+      "copyright": "Copyright &copy 痴者工良 2021",
+      "modify_label": "文档最后更新时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "insert-logo": {
+      "url": "/.images/logo.jpg",
+      "style": "background: none; max-height: 50px; min-height: 50px"
+    },
+    "github": {
+      "url": "https://github.com/whuanle/kubernetes"
+    },
+    "prism": {
+      "css": [
+        "prismjs/themes/prism-solarizedlight.css"
+      ]
+    },
+    "anchor-navigation-ex": {
+      "showLevel": true, 
+      "showGoTop": false 
+    }
+  }
+}
