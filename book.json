@@ -17,7 +17,7 @@
   "language": "zh-hans",
   "links": {
     "sidebar": {
-      "作者博客": "https://www.whuanle.cn"
+      "痴者工良的博客": "https://www.whuanle.cn"
     }
   },
   "pluginsConfig": {
@@ -39,7 +39,7 @@
       ]
     },
     "anchor-navigation-ex": {
-      "showLevel": true, 
+      "showLevel": false, 
       "showGoTop": false 
     }
   }

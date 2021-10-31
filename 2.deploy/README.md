@@ -1,6 +1,10 @@
 # 2.部署和配置
 
-本章内容主要是介绍、实践部署以及配置 Kubernetes 集群，也会介绍如何在部署中解决网络问题。
+本章内容主要是介绍、实践部署以及配置 Kubernetes 集群，如果读者的服务器环境处于国内，可能会因为网络原因无法部署 Kubernetes，建议读者使用国产的容器平台管理工具  kubesphere。
+
+但是还是建议读者使用本章中的 minikube 和 kubeadm 教程部署 kubernetes，因为教程中会讲解一些 kubenetes 的知识，我们要学习它，就不应该绕过这个部署过程。如果是新手上路，部署失败，则建议使用 kubesphere 一键部署，等学习过 kubernetes 后，有空再尝试手动部署 kubernetes。
+
+
 
 ## 学习目标
 
@@ -33,3 +37,4 @@
 对于每个节点或虚拟机，尽量满足最低每台 2核2GB 的配置。
 
 在 [https://katacoda.com/](https://katacoda.com) 网站，有很多教程以及能够免费学习，并且可以使用线上的服务器环境。
+
