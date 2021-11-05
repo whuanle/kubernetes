@@ -2,7 +2,7 @@
 
 ## 学习目标
 
-**部署、配置、标签选择、调度、副本、控制器**
+**部署、配置、标签选择、调度、副本、控制器、有状态的无状态的 Pod**
 
 * 讨论部署配置细节
   * 通过 `kubectl create/apply` 创建 Deployment ，部署 Pod；
@@ -10,6 +10,7 @@
   * 如何查看对象信息，`kubectl get`、`kubectl describe`、`-o wide`、`-o yaml`;
   * 创建 Service，`kubectl expose`；
   * 设置副本集，`replicaset`；
+  * 查看对象支持的属性 `kubectl explain pods`，`kubectl explain pod.spec`
 * 向上和向下扩展部署。
   * 扩容 Pod，设置副本集，`kubectl scale`、`kubectl edit`；
   * 自动扩容 Pod，水平缩放，比例缩放，根据 CPU、内存缩放，`kubectl autoscale`；
@@ -30,6 +31,8 @@
 * Job 和 CronJob
   * 了解 Job，完成数(conpetions)、工作队列(parallelism)、控制并行性、清理 Job。
   * CronJob 的时间表示
+* StatefulSet
+  * 有状态的应用
 
 掌握以下命令的使用：
 
