@@ -47,8 +47,5 @@
   * [日志和监控工具](8.health/ri-zhi-he-jian-kong-gong-ju.md)
   * [抓包](8.health/zhua-bao.md)
   * [教程](8.health/jiao-cheng.md)
-* [courseintroduction](courseintroduction.md)
-* [技巧与提示](jiqiao.md)
 * [Readme](undefined.md)
-* [考试规定](kao-shi-gui-ding.md)
 
