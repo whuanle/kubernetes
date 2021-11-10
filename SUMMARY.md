@@ -37,7 +37,7 @@
   * [5.1 卷](5.volumes/1.volumes.md)
   * [5.2 secret 和 ConfigMap 卷](5.volumes/2.secret_configmap.md)
   * [5.3 NFS卷](5.volumes/3.nfts.md)
-  * [5.3 持久化卷](5.volumes/4.pv_pvc.md)
+  * [5.4 持久化卷](5.volumes/4.pv_pvc.md)
 * [6.安全](6.safe/README.md)
   * [导读](6.safe/README.md)
 * [7.API与对象](7.api/README.md)
