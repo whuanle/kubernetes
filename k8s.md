@@ -28,6 +28,14 @@ kubectl get po nginx -o jsonpath='{.spec.containers[].image}{"\n"}'
 
 
 
+获取 skywalker 命名空间下带有 `jedi=true` 标签的 Pod 的名称和镜像名称，输出格式：`podname,imagename`。
+
+```bash
+kubectl get po  -n skywalker --selector=jedi=true -o jsonpath="{range .items[*]}{.metadata.name},{.spec.containers[0].image}{'\n'}{end}" 
+```
+
+
+
 
 
 **创建 Pod**
@@ -382,6 +390,42 @@ cat file.log
 
 
 
+Create a pod `mp-hello` with image `alpine`,`nginx` and `consul:1.8`. Use command `sleep infinity` for `alpine` container.
+
+
+
+可以先使用 `kubectl run mp-hello --image=alpine -o yaml --dry-run=client -- sleep infinity` 命令生成第一个容器，接着复制另外两个容器。
+
+核心部分：
+
+```yaml
+  containers:
+  - args:
+    - sleep
+    - infinity
+    image: alpine
+    name: alpine
+  - image: nginx
+    name: nginx
+  - image: consul:1.8
+    name: consul
+```
+
+
+
+注意，多个镜像，后面的镜像需要带 `-`，否则只会生效最后一个。下面这样是错误的：
+
+```yaml
+    image: alpine
+    name: alpine
+    image: nginx
+    name: nginx
+    image: consul:1.8
+    name: consul
+```
+
+
+
 
 
 
@@ -441,6 +485,16 @@ kubectl label pod/nginx-dev3 env-
 ```
 
 > 增加标签移除标签不需要加上 `-l` 或 `-label`。筛选对象才需要加上  `-l` 或 `-label`。
+
+
+
+annotation 也是类似，但是 annotation 的命令关键字是 annotate，而不是 annotation 。
+
+```bash
+ kubectl annotate  node node01 flagship-
+```
+
+
 
 
 
@@ -631,6 +685,8 @@ kubectl create cm envcfgmap --from-env-file=file.env
 
 
 
+忘记 `--from...` 的时候，不要查 kubernetes，而是使用 `kubectl create configmap --help` 快速查询文档。
+
 
 
 **Secret**
@@ -638,7 +694,7 @@ kubectl create cm envcfgmap --from-env-file=file.env
 secret 跟 comfigmap 类似，创建 secret：
 
 ```bash
-kubectl create secret generic my-secret --from-literal=username=user --from-literal=password=mypassword
+kubectl create secret generic my-secret --from-literal='username=user' --from-literal='password=mypassword'
 ```
 
 映射到 Pod 中：

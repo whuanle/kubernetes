@@ -40,12 +40,7 @@
   * [5.4 持久化卷](5.volumes/4.pv_pvc.md)
 * [6.安全](6.safe/README.md)
   * [导读](6.safe/README.md)
-* [7.API与对象](7.api/README.md)
-  * [导读](6.api/README.md)
-* [8.日志和故障排除](8.health/README.md)
+* [7.维护和故障排除](7.health/README.md)
   * [导读](8.health/README.md)
-  * [日志和监控工具](8.health/ri-zhi-he-jian-kong-gong-ju.md)
-  * [抓包](8.health/zhua-bao.md)
-  * [教程](8.health/jiao-cheng.md)
 * [Readme](undefined.md)
 

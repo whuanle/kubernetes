@@ -1,63 +1,56 @@
 # 第四章：Kubernetes 网络
 
+## 学习目标
+
+**Kubernetes 网络模型、服务与网络、服务发现、应用隔离**
 
 
-## 1.学习目标
 
-**服务与网络 - 13％**
+**Kubernetes 网络模型**
 
-• 了解服务
+了解 Kubernetes 网络模型；
 
-• 展示对NetworkPolicies的基本了解
+容器间通讯、Pod 间通讯、跨节点间通讯；
+
+
 
 **Service 部分**
 
-解释Kubernetes服务。
+Pod IP、Service IP；
 
-应用程序公开。
+Service、Endpoint；
 
-讨论可用的服务类型。
+第三方多应用实例代理；
 
-启动本地代理。
+为应用程序暴露端口、对外提供服务；
 
-使用集群DNS
+深入了解 Kubernetes Service；
 
-**Ingress** 部分
+了解 Service 类型，了解能做和不能做的事情；
 
-讨论入口控制器和服务之间的区别。
+本地代理 proxy；
 
-了解nginx和GCE输入控制器。
+服务发现；
 
-部署Ingress Controller。
-
-配置入接口规则。
-
-对于 Ingress 的内容，需要了解那些知识和概念，对于实践方面，需要学会配置规则即可。
-
-**高可用(HIGH AVAILABILITY)**
-
-讨论Kubernetes中的高可用性。
-
-讨论并置数据库和非并置数据库。
-
-学习Kubernetes中实现高可用性的步骤。
+负载均衡；
 
 
 
-coredns
+**Ingress** 
 
-### **10.网络策略及资源限制**
+深入了解 Ingress；
 
-10.1配置calico网络实现跨节点docker容器通信
+负载均衡；
 
-10.2网络策略
+创建配置 Ingress，配置路由；
 
-限制同一命名空间里的pod的访问
+绑定域名，外部域名访问 Ingress；
 
-允许指定命名空间里的pod访问
+反向代理；
 
-允许指定命名空间里特定的pod访问
+微服务；
 
-egress策略的使用
+公网访问；
 
-默认策略
+TLS 证书；
+

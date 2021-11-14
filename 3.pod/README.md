@@ -36,8 +36,6 @@
 
 掌握以下命令的使用：
 
-kubectl
-
 kubectl 原理是请求 apiserver 完成某些操作，日常操作中，最常用的就是 kubectl。
 
 `kubectl create {对象}` ，创建 deployment、job 等对象。
