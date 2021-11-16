@@ -1,0 +1,1130 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5.1 卷 · Kubernetes - 痴者工良</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="痴者工良">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2.secret_configmap.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.whuanle.cn" target="_blank" class="custom-link">痴者工良的博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    文档说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1.basic/">
+            
+                <a href="../1.basic/">
+            
+                    
+                    1.基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1.basic/">
+            
+                <a href="../1.basic/">
+            
+                    
+                    导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1.basic/1.docker.html">
+            
+                <a href="../1.basic/1.docker.html">
+            
+                    
+                    1.1 说透 Docker：基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1.basic/2.virtual.html">
+            
+                <a href="../1.basic/2.virtual.html">
+            
+                    
+                    1.2 说透 Docker： 虚拟化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1.basic/3.docker_network.html">
+            
+                <a href="../1.basic/3.docker_network.html">
+            
+                    
+                    1.3 了解 Docker 网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../1.basic/4.pod_docker.html">
+            
+                <a href="../1.basic/4.pod_docker.html">
+            
+                    
+                    1.4 Docker 和 Pod
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../1.basic/5.k8s.html">
+            
+                <a href="../1.basic/5.k8s.html">
+            
+                    
+                    1.5 K8S入门基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2.deploy/">
+            
+                <a href="../2.deploy/">
+            
+                    
+                    2.部署和配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../2.deploy/2.deploy.md">
+            
+                <span>
+            
+                    
+                    导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../2.deploy/1.minikube.html">
+            
+                <a href="../2.deploy/1.minikube.html">
+            
+                    
+                    2.1 使用 Minikube 部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../2.deploy/2.kubeadm.html">
+            
+                <a href="../2.deploy/2.kubeadm.html">
+            
+                    
+                    2.2 使用 kubeadm 部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../2.deploy/3.kubeadm_ckad.html">
+            
+                <a href="../2.deploy/3.kubeadm_ckad.html">
+            
+                    
+                    2.3 CKAD认证中的部署教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../2.deploy/4.kubeadm_proxy.html">
+            
+                <a href="../2.deploy/4.kubeadm_proxy.html">
+            
+                    
+                    2.4 国内代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../2.deploy/5.dashboard.html">
+            
+                <a href="../2.deploy/5.dashboard.html">
+            
+                    
+                    2.5 Dashboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3.pod/">
+            
+                <a href="../3.pod/">
+            
+                    
+                    3.Pod部署和调度
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3.pod/">
+            
+                <a href="../3.pod/">
+            
+                    
+                    导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3.pod/1.pod.html">
+            
+                <a href="../3.pod/1.pod.html">
+            
+                    
+                    3.1 Pod
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../3.pod/2.deployment.html">
+            
+                <a href="../3.pod/2.deployment.html">
+            
+                    
+                    3.2 Deployment部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../3.pod/3.replica.html">
+            
+                <a href="../3.pod/3.replica.html">
+            
+                    
+                    3.3 副本集(ReplicaSet)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../3.pod/4.pod_network.html">
+            
+                <a href="../3.pod/4.pod_network.html">
+            
+                    
+                    3.34 Pod 端口映射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../3.pod/5.update.html">
+            
+                <a href="../3.pod/5.update.html">
+            
+                    
+                    3.5 Pod 升级、回滚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../3.pod/6.scale.html">
+            
+                <a href="../3.pod/6.scale.html">
+            
+                    
+                    3.6 Pod 缩放
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../3.pod/7.lable.html">
+            
+                <a href="../3.pod/7.lable.html">
+            
+                    
+                    3.7.Pod 标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../3.pod/8.schedule.html">
+            
+                <a href="../3.pod/8.schedule.html">
+            
+                    
+                    3.8 Pod 调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../3.pod/9.jobs_cronjobs.html">
+            
+                <a href="../3.pod/9.jobs_cronjobs.html">
+            
+                    
+                    3.9 Jobs、CronJobs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4.network/">
+            
+                <a href="../4.network/">
+            
+                    
+                    4.Kubernetes 网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4.network/">
+            
+                <a href="../4.network/">
+            
+                    
+                    导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4.network/1.network.html">
+            
+                <a href="../4.network/1.network.html">
+            
+                    
+                    4.1 Kubernetes 网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../4.network/2.endpoint.html">
+            
+                <a href="../4.network/2.endpoint.html">
+            
+                    
+                    4.2 Endpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../4.network/3.ingress.html">
+            
+                <a href="../4.network/3.ingress.html">
+            
+                    
+                    4.3 ingress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../4.network/4.discovery.html">
+            
+                <a href="../4.network/4.discovery.html">
+            
+                    
+                    4.4 服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    5.volumes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2" data-path="1.volumes.html">
+            
+                <a href="1.volumes.html">
+            
+                    
+                    5.1 卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="2.secret_configmap.html">
+            
+                <a href="2.secret_configmap.html">
+            
+                    
+                    5.2 secret 和 ConfigMap 卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="3.nfts.html">
+            
+                <a href="3.nfts.html">
+            
+                    
+                    5.3 NFS卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="4.pv_pvc.html">
+            
+                <a href="4.pv_pvc.html">
+            
+                    
+                    5.4 持久化卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../6.api_safe/">
+            
+                <a href="../6.api_safe/">
+            
+                    
+                    6.API 和 安全
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../6.api_safe/">
+            
+                <a href="../6.api_safe/">
+            
+                    
+                    导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../7.health/">
+            
+                <a href="../7.health/">
+            
+                    
+                    7.维护和故障排除
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../8.health/README.md">
+            
+                <span>
+            
+                    
+                    导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../k8s.html">
+            
+                <a href="../k8s.html">
+            
+                    
+                    Kubernetes 命令概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../ckad.html">
+            
+                <a href="../ckad.html">
+            
+                    
+                    CKAD 认证帮助
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >5.1 卷</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#51-&#x5377;"><b></b>5.1 &#x5377;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5377;"><b></b>&#x5377;</a></li><ul><li><span class="title-icon "></span><a href="#docker-&#x5377;"><b></b>Docker &#x5377;</a></li><li><span class="title-icon "></span><a href="#hostpath-&#x5377;"><b></b>hostPath &#x5377;</a></li><li><span class="title-icon "></span><a href="#emptydir-&#x5377;"><b></b>emptyDir &#x5377;</a></li><li><span class="title-icon "></span><a href="#git-&#x5377;"><b></b>Git &#x5377;</a></li></ul></ul></ul></div><h1 id="51-&#x5377;"><a name="51-&#x5377;" class="anchor-navigation-ex-anchor" href="#51-&#x5377;"><i class="fa fa-link" aria-hidden="true"></i></a>5.1 &#x5377;</h1>
+<p>&#x7531;&#x4E8E;&#x5BB9;&#x5668;&#x6700;&#x521D;&#x8BBE;&#x8BA1;&#x4E3A;&#x4E34;&#x65F6;&#x6027;&#x548C;&#x65E0;&#x72B6;&#x6001;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x51E0;&#x4E4E;&#x4E0D;&#x9700;&#x8981;&#x89E3;&#x51B3;&#x5B58;&#x50A8;&#x6301;&#x4E45;&#x6027;&#x95EE;&#x9898;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x968F;&#x7740;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x9700;&#x8981;&#x4ECE;&#x6301;&#x4E45;&#x6027;&#x5B58;&#x50A8;&#x8BFB;&#x5199;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x88AB;&#x5BB9;&#x5668;&#x5316;&#xFF0C;&#x5BF9;&#x6301;&#x4E45;&#x6027;&#x5B58;&#x50A8;&#x5377;&#x7684;&#x8BBF;&#x95EE;&#x9700;&#x6C42;&#x4E5F;&#x968F;&#x4E4B;&#x51FA;&#x73B0;&#xFF0C;&#x4E8E;&#x662F; Docker &#x51FA;&#x73B0;&#x4E86;&#x5377;&#x3002;Docker &#x4E2D;&#x7684;&#x5377;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x5C06;&#x4E3B;&#x673A;&#x76EE;&#x5F55;&#x6620;&#x5C04;&#x5230;&#x5BB9;&#x5668;&#x4E2D;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#xFF0C;&#x5728;&#x591A;&#x8282;&#x70B9;&#x96C6;&#x7FA4;&#x4E2D;&#xFF0C;Pod/&#x5BB9;&#x5668; &#x5728;&#x4E0D;&#x540C;&#x7684;&#x8282;&#x70B9;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x800C; Docker &#x4E2D;&#x7684;&#x5377;&#x53EA;&#x80FD;&#x6620;&#x5C04;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x7684;&#x76EE;&#x5F55;/&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x540C;&#x670D;&#x52A1;&#x5668;&#x95F4;&#x4E0D;&#x80FD;&#x5171;&#x4EAB;&#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x4E0D;&#x540C;&#x7684; Docker &#x662F;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x540C;&#x4E00;&#x4EFD;&#x6587;&#x4EF6;&#x7684;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x8BA9;&#x6563;&#x843D;&#x5728;&#x4E0D;&#x540C;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x7684;&#x540C;&#x4E00;&#x7C7B;&#x5BB9;&#x5668;&#x8BBF;&#x95EE;&#x540C;&#x4E00;&#x4EFD;&#x6587;&#x4EF6;&#xFF0C;Kubernetes &#x8BBE;&#x8BA1;&#x4E86;&#x6709;&#x6301;&#x4E45;&#x5316;&#x7684;&#x5377;&#x3002;Kubernetes &#x7684;&#x5377;&#x72EC;&#x7279;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x5B83;&#x4EEC;&#x662F;&#x96C6;&#x7FA4;&#x5916;&#x90E8;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x6301;&#x4E45;&#x5377;&#x6302;&#x8F7D;&#x5230;&#x96C6;&#x7FA4;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x5C06;&#x5B83;&#x4EEC;&#x4E0E;&#x7279;&#x5B9A;&#x8282;&#x70B9;&#x3001;&#x5BB9;&#x5668;&#x6216; Pod &#x5173;&#x8054;&#x3002;</p>
+<p>&#x91C7;&#x7528;&#x5BB9;&#x5668;&#x5B58;&#x50A8;&#x63A5;&#x53E3;(Container Storage Interface &#xFF0C;CSI) &#x4F7F;&#x7528;&#x4E8E;&#x5BB9;&#x5668;&#x7F16;&#x6392;&#x7684;&#x884C;&#x4E1A;&#x6807;&#x51C6;&#x63A5;&#x53E3;&#x7684;&#x76EE;&#x6807;&#x80FD;&#x591F;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;&#x4EFB;&#x610F;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#xFF0C;&#x6240;&#x4EE5; Kubernetes &#x4E0D;&#x4EC5;&#x652F;&#x6301; Docker &#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x591A;&#x79CD;&#x5BB9;&#x5668;&#x5F15;&#x64CE;&#x3002;&#x5728; Kubernetes &#x4E2D;&#xFF0C;&#x652F;&#x6301;&#x7684;&#x5377;&#x7C7B;&#x578B;&#x975E;&#x5E38;&#x591A;&#xFF0C;&#x800C;&#x4E14;&#x5F88;&#x62BD;&#x8C61;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x5BB9;&#x5668;&#x6280;&#x672F;&#x4E4B;&#x95F4;&#x7684;&#x5B9E;&#x73B0;&#x6709;&#x5F88;&#x5927;&#x5DEE;&#x5F02;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x8981;&#x652F;&#x6301; CSI &#x63A5;&#x53E3;&#xFF0C;&#x5219; Kubernetes &#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x4E3A;&#x8FD9;&#x4E9B;&#x5BB9;&#x5668;&#x5F15;&#x64CE;&#x5EFA;&#x7ACB;&#x7EDF;&#x4E00;&#x7684;&#x5377;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x7B14;&#x8005;&#x5C06;&#x4ECB;&#x7ECD; Kubernetes &#x4E2D;&#x4E00;&#x4E9B;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x5377;&#x3002;</p>
+<h2 id="&#x5377;"><a name="&#x5377;" class="anchor-navigation-ex-anchor" href="#&#x5377;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5377;</h2>
+<h3 id="docker-&#x5377;"><a name="docker-&#x5377;" class="anchor-navigation-ex-anchor" href="#docker-&#x5377;"><i class="fa fa-link" aria-hidden="true"></i></a>Docker &#x5377;</h3>
+<p>&#x5728; Docker &#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x7BA1;&#x7406;&#x5377;&#x3002;</p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x5BB9;&#x5668;&#x5377;</span>
+docker volume create <span class="token punctuation">{</span>&#x5377;&#x540D;&#x79F0;<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x67E5;&#x770B;&#x6240;&#x6709;&#x5BB9;&#x5668;&#x5377;</span>
+docker volume <span class="token function">ls</span>
+</code></pre>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x67E5;&#x770B;&#x6307;&#x5B9A;&#x5BB9;&#x5668;&#x5377;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;</span>
+docker volume inspect <span class="token punctuation">{</span>&#x5377;&#x540D;&#x79F0;<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C;&#x5BB9;&#x5668;&#x65F6;&#xFF0C;&#x4F7F;&#x7528; <code>-v</code> &#x6620;&#x5C04;&#x4E3B;&#x673A;&#x76EE;&#x5F55;&#xFF0C;&#x6216;&#x8005;&#x6620;&#x5C04;&#x5BB9;&#x5668;&#x5377;&#x5230;&#x5BB9;&#x5668;&#x4E2D;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">docker -itd <span class="token punctuation">..</span>. -v /var/tmp:/opt/app <span class="token punctuation">..</span>.
+docker -itd <span class="token punctuation">..</span>. -v <span class="token punctuation">{</span>&#x5377;&#x540D;<span class="token punctuation">}</span>:/opt/app    <span class="token punctuation">..</span>.
+</code></pre>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">docker run -v /opt/test:/opt/test -it ubuntu <span class="token function">bash</span>
+docker run  --read-only -v /opt/test:/opt/test -it ubuntu <span class="token function">bash</span>
+</code></pre>
+<p>&#x5728; Docker &#x4E2D;&#xFF0C;&#x5377;&#x662F;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;Docker &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x6302;&#x8F7D;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;/&#x547D;&#x4EE4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--volume</code> , <code>-v</code></td>
+<td>&#x7ED1;&#x5B9A;&#x6302;&#x8F7D;&#x5377;</td>
+</tr>
+<tr>
+<td><code>--volume-driver</code></td>
+<td>&#x5BB9;&#x5668;&#x7684;&#x53EF;&#x9009;&#x5377;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;</td>
+</tr>
+<tr>
+<td><code>--volumes-from</code></td>
+<td>&#x4ECE;&#x6307;&#x5B9A;&#x7684;&#x5BB9;&#x5668;&#x6302;&#x8F7D;&#x5377;&#xFF0C;&#x5BB9;&#x5668;&#x95F4;&#x53EF;&#x4F20;&#x9012;&#x5171;&#x4EAB;</td>
+</tr>
+</tbody>
+</table>
+<p>Docker &#x4E2D;&#x5377;&#x6CA1;&#x6709;&#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;&#x3002;&#x5BF9;&#x4E8E;&#x7EAF; Docker &#x5BB9;&#x5668;&#x6765;&#x8BF4;&#xFF0C;&#x53EA;&#x8981;&#x5BBF;&#x4E3B;&#x673A;&#x7684;&#x76EE;&#x5F55;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x5BB9;&#x5668;&#x521B;&#x5EFA;&#x548C;&#x9500;&#x6BC1;&#x65F6;&#xFF0C;&#x4E0D;&#x4F1A;&#x5220;&#x9664;&#x5BBF;&#x4E3B;&#x673A;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4F46; Docker &#x7684;&#x5377;&#x53EA;&#x6709;&#x5C11;&#x91CF;&#x4E14;&#x677E;&#x6563;&#x7684;&#x7BA1;&#x7406;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x6302;&#x8F7D;&#x5377;&#xFF0C;&#x5728; Docker &#x4E2D;&#xFF0C;&#x521B;&#x5EFA;&#x65B0;&#x7248;&#x672C;&#x7684; &#x5BB9;&#x5668;&#x540E;&#xFF0C;&#x65E7;&#x5BB9;&#x5668;&#x7684;&#x6570;&#x636E;&#x4F1A;&#x4E22;&#x5931;&#x3002;</p>
+<h3 id="hostpath-&#x5377;"><a name="hostpath-&#x5377;" class="anchor-navigation-ex-anchor" href="#hostpath-&#x5377;"><i class="fa fa-link" aria-hidden="true"></i></a>hostPath &#x5377;</h3>
+<p><code>hostPath</code> &#x5377;&#x80FD;&#x5C06;&#x4E3B;&#x673A;&#x8282;&#x70B9;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x6302;&#x8F7D;&#x5230; Pod &#x4E2D;&#xFF0C;&#x7C7B;&#x4F3C; Docker &#x7684; <code>-v</code> &#x6302;&#x8F7D;&#x3002;hostPath &#x5377;&#x4F9D;&#x8D56;&#x4E8E;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x76EE;&#x5F55;&#x6216;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x540C;&#x8282;&#x70B9;&#x7684; Pod &#x65E0;&#x6CD5;&#x5171;&#x4EAB;&#x76F8;&#x540C;&#x7684;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x8003;&#x8651; hostPath &#x5728;&#x4EE5;&#x4E0B;&#x60C5;&#x51B5;&#x4E0B;&#x4F7F;&#x7528;&#xFF1A;</p>
+<ul>
+<li>&#x5355;&#x4E2A; Pod &#xFF0C;&#x90E8;&#x7F72;&#x5728;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#xFF1B;</li>
+<li><p>&#x591A;&#x4E2A; Pod&#xFF0C;&#x4F46;&#x662F;&#x90FD;&#x90E8;&#x7F72;&#x5728;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x4E00;&#x822C;&#x4F1A;&#x4E3A; Pod &#x52A0;&#x4E0A;&#x8282;&#x70B9;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x786E;&#x4FDD; Pod &#x5206;&#x914D;&#x5230;&#x9700;&#x8981;&#x7684;&#x8282;&#x70B9;&#x4E0A;&#x3002;</p>
+<p>... ...</p>
+</li>
+</ul>
+<p>&#x4E00;&#x4E2A; hostPath &#x5377;&#x6620;&#x5C04;&#x4E3B;&#x673A;&#x76EE;&#x5F55;&#x7684;&#x914D;&#x7F6E;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-yaml">  <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>volume
+    <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
+      <span class="token comment"># &#x5BBF;&#x4E3B;&#x4E0A;&#x76EE;&#x5F55;&#x4F4D;&#x7F6E;</span>
+      <span class="token key atrule">path</span><span class="token punctuation">:</span> /data
+      <span class="token comment"># &#x6B64;&#x5B57;&#x6BB5;&#x4E3A;&#x53EF;&#x9009;</span>
+      <span class="token key atrule">type</span><span class="token punctuation">:</span> Directory
+</code></pre>
+<blockquote>
+<p>&#x8FD9;&#x6BB5; YAML &#x914D;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x79F0;&#x4E3A; test-volume &#x7684;&#x5377;&#xFF0C;&#x6620;&#x5C04;&#x7C7B;&#x578B;&#x662F;&#x76EE;&#x5F55;&#xFF0C;&#x4F4D;&#x7F6E;&#x662F; <code>/data</code>&#x3002;</p>
+</blockquote>
+<p>hostPath &#x7684; type&#xFF0C;&#x6709;&#x4EE5;&#x4E0B;&#x7C7B;&#x578B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53D6;&#x503C;</th>
+<th>&#x884C;&#x4E3A;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x9ED8;&#x8BA4;&#xFF09;&#x7528;&#x4E8E;&#x5411;&#x540E;&#x517C;&#x5BB9;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5728;&#x5B89;&#x88C5; hostPath &#x5377;&#x4E4B;&#x524D;&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x4EFB;&#x4F55;&#x68C0;&#x67E5;&#x3002;</td>
+</tr>
+<tr>
+<td><code>DirectoryOrCreate</code></td>
+<td>&#x5982;&#x679C;&#x5728;&#x7ED9;&#x5B9A;&#x8DEF;&#x5F84;&#x4E0A;&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x5C06;&#x6839;&#x636E;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x7A7A;&#x76EE;&#x5F55;&#xFF0C;&#x6743;&#x9650;&#x8BBE;&#x7F6E;&#x4E3A; 0755&#xFF0C;&#x5177;&#x6709;&#x4E0E; kubelet &#x76F8;&#x540C;&#x7684;&#x7EC4;&#x548C;&#x5C5E;&#x4E3B;&#x4FE1;&#x606F;&#x3002;</td>
+</tr>
+<tr>
+<td><code>Directory</code></td>
+<td>&#x5728;&#x7ED9;&#x5B9A;&#xF937;&#x5F84;&#x4E0A;&#x5FC5;&#x987B;&#x5B58;&#x5728;&#x7684;&#x76EE;&#x5F55;&#x3002;</td>
+</tr>
+<tr>
+<td><code>FileOrCreate</code></td>
+<td>&#x5982;&#x679C;&#x5728;&#x7ED9;&#x5B9A;&#x8DEF;&#x5F84;&#x4E0A;&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x5C06;&#x5728;&#x90A3;&#x91CC;&#x6839;&#x636E;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x7A7A;&#x6587;&#x4EF6;&#xFF0C;&#x6743;&#x9650;&#x8BBE;&#x7F6E;&#x4E3A; 0644&#xFF0C;&#x5177;&#x6709;&#x4E0E; kubelet &#x76F8;&#x540C;&#x7684;&#x7EC4;&#x548C;&#x6240;&#x6709;&#x6743;&#x3002;</td>
+</tr>
+<tr>
+<td><code>File</code></td>
+<td>&#x5728;&#x7ED9;&#x5B9A;&#x8DEF;&#x5F84;&#x4E0A;&#x5FC5;&#x987B;&#x5B58;&#x5728;&#x7684;&#x6587;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td><code>Socket</code></td>
+<td>&#x5728;&#x7ED9;&#x5B9A;&#x8DEF;&#x5F84;&#x4E0A;&#x5FC5;&#x987B;&#x5B58;&#x5728;&#x7684; UNIX &#x5957;&#x63A5;&#x5B57;&#x3002;</td>
+</tr>
+<tr>
+<td><code>CharDevice</code></td>
+<td>&#x5728;&#x7ED9;&#x5B9A;&#x8DEF;&#x5F84;&#x4E0A;&#x5FC5;&#x987B;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x7B26;&#x8BBE;&#x5907;&#x3002;</td>
+</tr>
+<tr>
+<td><code>BlockDevice</code></td>
+<td>&#x5728;&#x7ED9;&#x5B9A;&#x8DEF;&#x5F84;&#x4E0A;&#x5FC5;&#x987B;&#x5B58;&#x5728;&#x7684;&#x5757;&#x8BBE;&#x5907;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>hostPath &#x7684;&#x914D;&#x7F6E;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x505A;&#x8FC7;&#x591A;&#x4ECB;&#x7ECD;&#x3002;Pod &#x4E2D;&#x76F4;&#x63A5;&#x5B9A;&#x4E49; hostPath &#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5176; YAML &#x6A21;&#x677F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> test
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx<span class="token punctuation">:</span>latest
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>container
+    <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /test<span class="token punctuation">-</span>pd
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>volume
+  <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>volume
+    <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
+      <span class="token comment"># &#x5BBF;&#x4E3B;&#x4E0A;&#x76EE;&#x5F55;&#x4F4D;&#x7F6E;</span>
+      <span class="token key atrule">path</span><span class="token punctuation">:</span> /data
+      <span class="token comment"># &#x6B64;&#x5B57;&#x6BB5;&#x4E3A;&#x53EF;&#x9009;</span>
+      <span class="token key atrule">type</span><span class="token punctuation">:</span> DirectoryOrCreate
+</code></pre>
+<blockquote>
+<p>&#x7531;&#x4E8E; hostPath &#x662F;&#x5728;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x4F7F;&#x7528;&#x5355;&#x4E2A; Pod &#x90E8;&#x7F72;&#x6BD4;&#x8F83;&#x597D;&#x3002;&#x5BF9;&#x4E8E; Deployment &#x7B49;&#x591A; Pod &#x7684;&#x5BF9;&#x8C61;&#xFF0C;Pod &#x5206;&#x914D;&#x5728;&#x4E0D;&#x540C;&#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x4F7F;&#x7528; hostPath &#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;</p>
+</blockquote>
+<h3 id="emptydir-&#x5377;"><a name="emptydir-&#x5377;" class="anchor-navigation-ex-anchor" href="#emptydir-&#x5377;"><i class="fa fa-link" aria-hidden="true"></i></a>emptyDir &#x5377;</h3>
+<p>emptyDir &#x5377;&#x662F;&#x6700;&#x7B80;&#x5355;&#x7684;&#x4E00;&#x79CD;&#x5377;&#xFF0C;&#x9996;&#x5148;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A; &#x7A7A;&#x7684;&#x5377;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x4EC0;&#x4E48;&#x90FD;&#x6CA1;&#x6709;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x662F;&#x4E34;&#x65F6;&#x7684;&#xFF0C;&#x5176;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E0E; Pod &#x7ED1;&#x5B9A;&#x3002;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x5728;&#x540C;Pod&#x7684;&#x4E0D;&#x540C;&#x5BB9;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;&#x540C;&#x4E00;&#x4E2A; emptyDir&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x4E3A; Pod &#x914D;&#x7F6E;&#x4E00;&#x4E2A; emptyDir &#x5377;&#x5E76;&#x5F00;&#x59CB;&#x521B;&#x5EFA; Pod&#xFF0C;&#x5F53; Node &#x521B;&#x5EFA; Pod &#x540E;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA; emptyDir&#xFF0C;&#x5E76;&#x4E14;&#x5728; Pod &#x8FD0;&#x884C;&#x671F;&#x95F4;&#x8FD9;&#x4E2A; emptyDir &#x5377;&#x4E00;&#x76F4;&#x5B58;&#x5728;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C; Pod &#x88AB;&#x5220;&#x9664;&#xFF0C;&#x5219; emptyDir &#x5377;&#x4F1A;&#x4E22;&#x5931;&#x3002;</p>
+<blockquote>
+<p><strong>&#x8BF4;&#x660E;&#xFF1A;</strong> &#x5BB9;&#x5668;&#x5D29;&#x6E83;&#x5E76;<strong>&#x4E0D;</strong>&#x4F1A;&#x5BFC;&#x81F4; Pod &#x88AB;&#x4ECE;&#x8282;&#x70B9;&#x4E0A;&#x79FB;&#x9664;&#xFF0C;&#x56E0;&#x6B64;&#x5BB9;&#x5668;&#x5D29;&#x6E83;&#x671F;&#x95F4; <code>emptyDir</code> &#x5377;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x662F;&#x5B89;&#x5168;&#x7684;&#x3002;</p>
+</blockquote>
+<p>&#x5F53; emptyDir &#x5377;&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#x540E;&#xFF0C;Pod &#x4E2D;&#x7684;&#x5BB9;&#x5668;&#x4FBF;&#x53EF;&#x4EE5;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x5230;&#x5377;&#x4E2D;&#x3002;</p>
+<p>emptyDir &#x5377;&#x9002;&#x5408;&#x7528;&#x4E8E; Pod &#x4E2D;&#x7684;&#x5BB9;&#x5668;&#x5171;&#x4EAB;&#x6587;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;&#x524D;&#x540E;&#x7AEF;&#x5BB9;&#x5668;&#xFF0C;&#x524D;&#x7AEF;&#x5BB9;&#x5668;&#x662F;&#x8F85;&#x52A9;&#x8FDB;&#x7A0B;&#xFF0C;&#x4E0D;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;&#x4EFB;&#x4F55;&#x670D;&#x52A1;&#xFF0C;&#x524D;&#x7AEF;&#x6587;&#x4EF6;&#x901A;&#x8FC7; emptyDir &#x5171;&#x4EAB;&#x5230; Web &#x7684; wwwroot &#x76EE;&#x5F55;&#x4E2D;&#x3002;&#x7531; Web &#x5BF9;&#x5916;&#x63D0;&#x4F9B; 8080 &#x7AEF;&#x53E3;&#x670D;&#x52A1;&#xFF0C;&#x7528;&#x6237;&#x8BBF;&#x95EE; Web &#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;&#x524D;&#x7AEF;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x3002;&#x8FD9;&#x6837;&#x524D;&#x540E;&#x7AEF;&#x53EF;&#x4EE5;&#x5206;&#x5F00;&#x66F4;&#x65B0;&#x548C;&#x90E8;&#x7F72;&#xFF0C;&#x5B58;&#x653E;&#x524D;&#x7AEF;&#x6587;&#x4EF6;&#x7684;&#x8F85;&#x52A9;&#x5BB9;&#x5668;&#x53EA;&#x8D1F;&#x8D23;&#x63D0;&#x4F9B;&#x9759;&#x6001;&#x6587;&#x4EF6;&#xFF0C;&#x6700;&#x7EC8;&#x7531; Web &#x540E;&#x7AEF;&#x7A0B;&#x5E8F;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;&#x9759;&#x6001;&#x9875;&#x9762;&#x548C; API&#x3002;</p>
+<p><img src="images/Pod&#x591A;&#x5BB9;&#x5668;.png" alt="Pod&#x591A;&#x5BB9;&#x5668;"></p>
+<p>Deployment &#x6A21;&#x677F;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>web
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>web
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>web
+  <span class="token key atrule">strategy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>web
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">image</span><span class="token punctuation">:</span> web<span class="token punctuation">:</span>1.e
+        <span class="token key atrule">name</span><span class="token punctuation">:</span> web
+        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">8080</span>
+        <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /opt/web/root
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> wwwroot<span class="token punctuation">-</span>volume
+      <span class="token punctuation">-</span> <span class="token key atrule">image</span><span class="token punctuation">:</span> frontend<span class="token punctuation">:</span><span class="token number">1.2</span>
+        <span class="token key atrule">name</span><span class="token punctuation">:</span> frontend
+        <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /opt/frontend/root
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> wwwroot<span class="token punctuation">-</span>volume
+      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> wwwroot<span class="token punctuation">-</span>volume
+        <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4F7F;&#x7528; Pod &#x914D;&#x7F6E; &#x5355;&#x5BB9;&#x5668;&#xFF0C;&#x5176;&#x7B80;&#x5355;&#x7684;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>pd
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx<span class="token punctuation">:</span>latest
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>container
+    <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /cache
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> cache<span class="token punctuation">-</span>volume
+  <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> cache<span class="token punctuation">-</span>volume
+    <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre>
+<p>emptyDir &#x4E0D;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x5BBF;&#x4E3B;&#x673A;&#x4E0A;&#x5BF9;&#x5E94;&#x7684;&#x76EE;&#x5F55;&#xFF0C;Kubernetes &#x4F1A;&#x4E3A;&#x5176;&#x6307;&#x5B9A;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#xFF0C;emptyDir &#x5377;&#x5B58;&#x50A8;&#x4ECB;&#x8D28;&#x8DDF;&#x4E3B;&#x673A;&#x7684;&#x5B58;&#x50A8;&#x4ECB;&#x8D28;&#x6709;&#x5173;&#xFF0C;&#x4E00;&#x822C;&#x662F;&#x78C1;&#x76D8;&#x3001;&#x56FA;&#x6001;/&#x673A;&#x68B0;&#x786C;&#x76D8;&#x3001;&#x7F51;&#x7EDC;&#x5B58;&#x50A8;&#x7B49;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x5185;&#x5B58;&#x3002;&#x5728; Linux &#x4E2D;&#x6709;&#x4E00;&#x79CD; tmpfs&#xFF08;&#x57FA;&#x4E8E; RAM &#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF09;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x5176;&#x901F;&#x5EA6;&#x6BD4;&#x78C1;&#x76D8;&#x5FEB;&#xFF0C;&#x9002;&#x5408;&#x7528;&#x4F5C;&#x7F13;&#x5B58;&#xFF0C;&#x5C06; <code>emptyDir.medium</code> &#x5B57;&#x6BB5;&#x8BBE;&#x7F6E;&#x4E3A; <code>&quot;Memory&quot;</code> &#x5373;&#x53EF;&#xFF0C;&#x6240;&#x5199;&#x5165;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x90FD;&#x4F1A;&#x8BA1;&#x5165;&#x5BB9;&#xFA38;&#x7684;&#x5185;&#x5B58;&#x6D88;&#x8017;&#xFF0C;&#x53D7;&#x5BB9;&#xFA38;&#x5185;&#x5B58;&#x9650;&#x5236;&#x7EA6;&#x675F;&#xFF0C;&#x5982;&#x679C;&#x673A;&#x5668;&#x91CD;&#x542F;&#xFF0C;&#x6587;&#x4EF6;&#x4F1A;&#x4E22;&#x5931;&#x3002;</p>
+<p><code>emptyDir</code> &#x7684;&#x4E00;&#x4E9B;&#x7528;&#x9014;&#xFF1A;</p>
+<ul>
+<li>&#x7F13;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x4F8B;&#x5982;&#x57FA;&#x4E8E;&#x78C1;&#x76D8;&#x7684;&#x5F52;&#x5E76;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x3002;</li>
+<li>&#x4E3A;&#x8017;&#x65F6;&#x8F83;&#x957F;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x63D0;&#x4F9B;&#x68C0;&#x67E5;&#x70B9;&#xFF0C;&#x4EE5;&#xF965;&#x4EFB;&#x52A1;&#x80FD;&#x65B9;&#xF965;&#x5730;&#x4ECE;&#x5D29;&#x6E83;&#x524D;&#x72B6;&#x6001;&#x6062;&#x590D;&#x6267;&#xFA08;&#x3002;</li>
+<li>&#x5728; Web &#x670D;&#x52A1;&#x5668;&#x5BB9;&#x5668;&#x670D;&#x52A1;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x4FDD;&#x5B58;&#x5185;&#x5BB9;&#x7BA1;&#x7406;&#x5668;&#x5BB9;&#x5668;&#x83B7;&#x53D6;&#x7684;&#x6587;&#x4EF6;&#x3002;</li>
+</ul>
+<h3 id="git-&#x5377;"><a name="git-&#x5377;" class="anchor-navigation-ex-anchor" href="#git-&#x5377;"><i class="fa fa-link" aria-hidden="true"></i></a>Git &#x5377;</h3>
+<p>Git &#x5377;&#x4E5F;&#x662F;&#x4E00;&#x79CD; emptyDir &#x5377;&#xFF0C;&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;Git &#x5377;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x62C9;&#x53D6; Git &#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x5230; Pod &#x4E2D;&#x3002;&#x5728;&#x6700;&#x521D;&#x65F6;&#xFF0C;&#x6620;&#x5C04;&#x5230; Pod &#x4E2D;&#x7684;&#x76EE;&#x5F55;&#x662F;&#x7A7A;&#x7684;&#xFF0C;&#x5F53; Pod &#x542F;&#x52A8;&#x8D77;&#x6765;&#x65F6;&#xFF0C;&#x4FBF;&#x4F1A;&#x4ECE; Git &#x4E2D;&#x62C9;&#x53D6;&#x6E90;&#x4EE3;&#x7801;&#x5230; emptyDir &#x5A1F;&#x4E2D;&#xFF0C;&#x586B;&#x5145;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x3002;</p>
+<p>Git &#x5377;&#x9002;&#x5408;&#x7528;&#x6765;&#x505A;&#x7F16;&#x8BD1;&#xFF0C;&#x542F;&#x52A8; Pod &#x514B;&#x9686;&#x4ED3;&#x5E93;&#x540E;&#xFF0C;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x7A0B;&#x5E8F;&#x8BFB;&#x53D6;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x7F16;&#x8BD1;&#x9879;&#x76EE;&#xFF0C;&#x7F16;&#x8BD1;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x90E8;&#x7F72;&#x8FD0;&#x884C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6253;&#x5305;&#x53D1;&#x5E03;&#x3002;</p>
+<p>&#x5F88;&#x591A;&#x4EBA;&#x5E94;&#x8BE5;&#x90FD;&#x4E86;&#x89E3;&#x8FC7; Jenkins &#xFF0C;&#x901A;&#x8FC7;&#x6D41;&#x6C34;&#x7EBF;&#x6784;&#x5EFA;&#x81EA;&#x52A8;&#x5316;&#x53D1;&#x5E03;&#xFF0C;&#x5176;&#x5B9E; Kubernetes &#x4E2D;&#x7684; Git &#x5377;&#x4E5F;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x7C7B;&#x4F3C;&#x6548;&#x679C;&#xFF0C;&#x53EA;&#x662F;&#x5B9A;&#x5236;&#x4E0D;&#x592A;&#x7075;&#x6D3B;&#x3002;</p>
+<p>&#x4E0D;&#x8FC7; Git &#x5377;&#x7684;&#x7F3A;&#x70B9;&#x662F;&#x53EA;&#x5728; Pod &#x542F;&#x52A8;&#x65F6;&#x62C9;&#x53D6;&#x4E00;&#x6B21;&#x4EE3;&#x7801;&#xFF0C;&#x4E4B;&#x540E;&#x4ED3;&#x5E93;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x63D0;&#x4EA4;&#x591A;&#x5C11;&#x6B21;&#xFF0C;&#x90FD;&#x4E0D;&#x4F1A;&#x540C;&#x6B65;&#x5230;&#x4F60;&#x7684;&#x5377;&#x4E2D;&#x3002;&#x4E0D;&#x8FC7;&#x6BCF;&#x4E2A;&#x521B;&#x5EFA;&#x7684; Pod&#xFF0C;&#x90FD;&#x4F1A;&#x62C9;&#x53D6;&#x6700;&#x65B0;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x3002;</p>
+<p>Git &#x5377;&#x7684; <code>volumns</code> &#x90E8;&#x5206;&#xFF0C;&#x5176;&#x5B9A;&#x4E49;&#x6A21;&#x677F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">volumns</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> erp
+  <span class="token key atrule">gitRepo</span><span class="token punctuation">:</span> 
+    <span class="token key atrule">repository</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/whuanle/CZGL.AOP
+    <span class="token key atrule">revision</span><span class="token punctuation">:</span> main
+    <span class="token key atrule">directory</span><span class="token punctuation">:</span> .
+</code></pre>
+<blockquote>
+<p><code>directory</code> &#x914D;&#x7F6E;&#x62C9;&#x53D6;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x653E;&#x5230;&#x5377;&#x7684;&#x4EC0;&#x4E48;&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528; <code>.</code> &#x8868;&#x793A;&#x653E;&#x5230;&#x5377;&#x7684;&#x6839;&#x76EE;&#x5F55;&#x4E2D;&#x3002;</p>
+</blockquote>
+<p>&#x4EE5;&#x4E0A;&#x56DB;&#x79CD;&#x5377;&#x662F;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x7684;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x5377;&#x5728;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x4F1A;&#x63A5;&#x7740;&#x8BB2;&#x89E3;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x75F4;&#x8005;&#x5DE5;&#x826F; 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x6863;&#x6700;&#x540E;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF1A;
+2021-11-17 07:20:04
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 导读">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2.secret_configmap.html" class="navigation navigation-next " aria-label="Next page: 5.2 secret 和 ConfigMap 卷">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5.1 卷","level":"1.6.2","depth":2,"next":{"title":"5.2 secret 和 ConfigMap 卷","level":"1.6.3","depth":2,"path":"5.volumes/2.secret_configmap.md","ref":"5.volumes/2.secret_configmap.md","articles":[]},"previous":{"title":"导读","level":"1.6.1","depth":2,"path":"5.volumes/README.md","ref":"5.volumes/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","anchor-navigation-ex","mermaid-gb3","insert-logo","chapter-fold","advanced-emoji","github","splitter","alerts","popup","prism","-highlight","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 痴者工良 2021","modify_label":"文档最后更新时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"lang":{"flow":"typescript","shell":"bash"},"ignore":["mermaid","eval-js"],"css":["prismjs/themes/prism.css"],"js":["prismjs/prism.js","prismjs/components.js","prismjs/components/prism-go.min.js","prismjs/components/prism-yaml.min.js","prismjs/components/prism-bash.min.js","prismjs/components/prism-shell-session.min.js"]},"github":{"url":"https://github.com/whuanle/kubernetes"},"livereload":{},"splitter":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":false,"showLevel":false},"alerts":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 50px; min-height: 50px","url":"/images/logo.jpg"}},"theme":"default","author":"痴者工良","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Kubernetes - 痴者工良","language":"zh-hans","links":{"sidebar":{"痴者工良的博客":"https://www.whuanle.cn"}},"gitbook":"*","description":"这是一本关于 Kubernetes 的书，作者 痴者工良"},"file":{"path":"5.volumes/1.volumes.md","mtime":"2021-11-16T23:20:04.358Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-16T23:21:22.294Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

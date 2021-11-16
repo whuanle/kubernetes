@@ -1,0 +1,61 @@
+{
+  "plugins": [
+    // 页脚注释
+    "tbfed-pagefooter",
+    // 右侧导航栏
+    "anchor-navigation-ex",
+    // 流程图支持 mermaid
+    "mermaid-gb3",
+    // 电子书左上角图标
+    "insert-logo",
+    // 左侧导航目录折叠
+    "chapter-fold",
+    // 支持 emoji 表情
+    "advanced-emoji",
+    // 右上角 github 图标
+    "github",
+    // 支持导航栏与内容之间侧边栏调节宽度
+    "splitter",
+    // 警报样式提示
+    "alerts",
+    // 点击查看大图
+    "popup",
+    // 代码高亮
+    "-highlight",
+    "prism",
+    "prism-themes"
+  ],
+  "title": "Kubernetes - 痴者工良",
+  "author": "痴者工良",
+  "description": "这是一本关于 Kubernetes 的书，作者 痴者工良",
+  "language": "zh-hans",
+  "links": {
+    "sidebar": {
+      "作者博客": "https://www.whuanle.cn"
+    }
+  },
+  "pluginsConfig": {
+    "tbfed-pagefooter": {
+      "copyright": "Copyright &copy 痴者工良 2021",
+      "modify_label": "文档最后更新时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "insert-logo": {
+      "url": "/.images/logo.jpg",
+      "style": "background: none; max-height: 50px; min-height: 50px"
+    },
+    "github": {
+      "url": "https://github.com/whuanle/kubernetes"
+    },
+    "prism": {
+      // https://github.com/PrismJS/prism-themes
+      "css": [
+        "prism-themes/themes/prism-duotone-dark.css"
+      ]
+    },
+    "anchor-navigation-ex": {
+      "showLevel": false, //标题是否显示层级序号.页面标题和导航中的标题都会加上层级显示。
+      "showGoTop": false // 是否显示返回顶部按钮
+    }
+  }
+}

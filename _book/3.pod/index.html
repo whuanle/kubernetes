@@ -1,0 +1,966 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.Pod部署和调度 · Kubernetes - 痴者工良</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="痴者工良">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="./" />
+    
+    
+    <link rel="prev" href="../2.deploy/5.dashboard.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.whuanle.cn" target="_blank" class="custom-link">痴者工良的博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    文档说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1.basic/">
+            
+                <a href="../1.basic/">
+            
+                    
+                    1.基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1.basic/">
+            
+                <a href="../1.basic/">
+            
+                    
+                    导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1.basic/1.docker.html">
+            
+                <a href="../1.basic/1.docker.html">
+            
+                    
+                    1.1 说透 Docker：基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../1.basic/2.virtual.html">
+            
+                <a href="../1.basic/2.virtual.html">
+            
+                    
+                    1.2 说透 Docker： 虚拟化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../1.basic/3.docker_network.html">
+            
+                <a href="../1.basic/3.docker_network.html">
+            
+                    
+                    1.3 了解 Docker 网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../1.basic/4.pod_docker.html">
+            
+                <a href="../1.basic/4.pod_docker.html">
+            
+                    
+                    1.4 Docker 和 Pod
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../1.basic/5.k8s.html">
+            
+                <a href="../1.basic/5.k8s.html">
+            
+                    
+                    1.5 K8S入门基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2.deploy/">
+            
+                <a href="../2.deploy/">
+            
+                    
+                    2.部署和配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../2.deploy/2.deploy.md">
+            
+                <span>
+            
+                    
+                    导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../2.deploy/1.minikube.html">
+            
+                <a href="../2.deploy/1.minikube.html">
+            
+                    
+                    2.1 使用 Minikube 部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../2.deploy/2.kubeadm.html">
+            
+                <a href="../2.deploy/2.kubeadm.html">
+            
+                    
+                    2.2 使用 kubeadm 部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../2.deploy/3.kubeadm_ckad.html">
+            
+                <a href="../2.deploy/3.kubeadm_ckad.html">
+            
+                    
+                    2.3 CKAD认证中的部署教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../2.deploy/4.kubeadm_proxy.html">
+            
+                <a href="../2.deploy/4.kubeadm_proxy.html">
+            
+                    
+                    2.4 国内代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../2.deploy/5.dashboard.html">
+            
+                <a href="../2.deploy/5.dashboard.html">
+            
+                    
+                    2.5 Dashboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    3.Pod部署和调度
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="1.pod.html">
+            
+                <a href="1.pod.html">
+            
+                    
+                    3.1 Pod
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="2.deployment.html">
+            
+                <a href="2.deployment.html">
+            
+                    
+                    3.2 Deployment部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="3.replica.html">
+            
+                <a href="3.replica.html">
+            
+                    
+                    3.3 副本集(ReplicaSet)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="4.pod_network.html">
+            
+                <a href="4.pod_network.html">
+            
+                    
+                    3.34 Pod 端口映射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="5.update.html">
+            
+                <a href="5.update.html">
+            
+                    
+                    3.5 Pod 升级、回滚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="6.scale.html">
+            
+                <a href="6.scale.html">
+            
+                    
+                    3.6 Pod 缩放
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="7.lable.html">
+            
+                <a href="7.lable.html">
+            
+                    
+                    3.7.Pod 标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="8.schedule.html">
+            
+                <a href="8.schedule.html">
+            
+                    
+                    3.8 Pod 调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="9.jobs_cronjobs.html">
+            
+                <a href="9.jobs_cronjobs.html">
+            
+                    
+                    3.9 Jobs、CronJobs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4.network/">
+            
+                <a href="../4.network/">
+            
+                    
+                    4.Kubernetes 网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4.network/">
+            
+                <a href="../4.network/">
+            
+                    
+                    导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4.network/1.network.html">
+            
+                <a href="../4.network/1.network.html">
+            
+                    
+                    4.1 Kubernetes 网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../4.network/2.endpoint.html">
+            
+                <a href="../4.network/2.endpoint.html">
+            
+                    
+                    4.2 Endpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../4.network/3.ingress.html">
+            
+                <a href="../4.network/3.ingress.html">
+            
+                    
+                    4.3 ingress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../4.network/4.discovery.html">
+            
+                <a href="../4.network/4.discovery.html">
+            
+                    
+                    4.4 服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../5.volumes/">
+            
+                <a href="../5.volumes/">
+            
+                    
+                    5.volumes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../5.volumes/">
+            
+                <a href="../5.volumes/">
+            
+                    
+                    导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../5.volumes/1.volumes.html">
+            
+                <a href="../5.volumes/1.volumes.html">
+            
+                    
+                    5.1 卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../5.volumes/2.secret_configmap.html">
+            
+                <a href="../5.volumes/2.secret_configmap.html">
+            
+                    
+                    5.2 secret 和 ConfigMap 卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../5.volumes/3.nfts.html">
+            
+                <a href="../5.volumes/3.nfts.html">
+            
+                    
+                    5.3 NFS卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../5.volumes/4.pv_pvc.html">
+            
+                <a href="../5.volumes/4.pv_pvc.html">
+            
+                    
+                    5.4 持久化卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../6.api_safe/">
+            
+                <a href="../6.api_safe/">
+            
+                    
+                    6.API 和 安全
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../6.api_safe/">
+            
+                <a href="../6.api_safe/">
+            
+                    
+                    导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../7.health/">
+            
+                <a href="../7.health/">
+            
+                    
+                    7.维护和故障排除
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../8.health/README.md">
+            
+                <span>
+            
+                    
+                    导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../k8s.html">
+            
+                <a href="../k8s.html">
+            
+                    
+                    Kubernetes 命令概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../ckad.html">
+            
+                <a href="../ckad.html">
+            
+                    
+                    CKAD 认证帮助
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.Pod部署和调度</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x7B2C;&#x4E09;&#x7AE0;&#xFF1A;pod&#x90E8;&#x7F72;&#x548C;&#x8C03;&#x5EA6;"><b></b>&#x7B2C;&#x4E09;&#x7AE0;&#xFF1A;Pod&#x90E8;&#x7F72;&#x548C;&#x8C03;&#x5EA6;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B66;&#x4E60;&#x76EE;&#x6807;"><b></b>&#x5B66;&#x4E60;&#x76EE;&#x6807;</a></li></ul></ul></div><h1 id="&#x7B2C;&#x4E09;&#x7AE0;&#xFF1A;pod&#x90E8;&#x7F72;&#x548C;&#x8C03;&#x5EA6;"><a name="&#x7B2C;&#x4E09;&#x7AE0;&#xFF1A;pod&#x90E8;&#x7F72;&#x548C;&#x8C03;&#x5EA6;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x4E09;&#x7AE0;&#xFF1A;pod&#x90E8;&#x7F72;&#x548C;&#x8C03;&#x5EA6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B2C;&#x4E09;&#x7AE0;&#xFF1A;Pod&#x90E8;&#x7F72;&#x548C;&#x8C03;&#x5EA6;</h1>
+<h2 id="&#x5B66;&#x4E60;&#x76EE;&#x6807;"><a name="&#x5B66;&#x4E60;&#x76EE;&#x6807;" class="anchor-navigation-ex-anchor" href="#&#x5B66;&#x4E60;&#x76EE;&#x6807;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B66;&#x4E60;&#x76EE;&#x6807;</h2>
+<p><strong>&#x90E8;&#x7F72;&#x3001;&#x914D;&#x7F6E;&#x3001;&#x6807;&#x7B7E;&#x9009;&#x62E9;&#x3001;&#x8C03;&#x5EA6;&#x3001;&#x526F;&#x672C;&#x3001;&#x63A7;&#x5236;&#x5668;&#x3001;&#x6709;&#x72B6;&#x6001;&#x7684;&#x65E0;&#x72B6;&#x6001;&#x7684; Pod</strong></p>
+<ul>
+<li>&#x8BA8;&#x8BBA;&#x90E8;&#x7F72;&#x914D;&#x7F6E;&#x7EC6;&#x8282;<ul>
+<li>&#x901A;&#x8FC7; <code>kubectl create/apply</code> &#x521B;&#x5EFA; Deployment &#xFF0C;&#x90E8;&#x7F72; Pod&#xFF1B;</li>
+<li>&#x901A;&#x8FC7; <code>kubectl edit</code> &#x4FEE;&#x6539; &#x5BF9;&#x8C61;&#xFF1B;</li>
+<li>&#x5982;&#x4F55;&#x67E5;&#x770B;&#x5BF9;&#x8C61;&#x4FE1;&#x606F;&#xFF0C;<code>kubectl get</code>&#x3001;<code>kubectl describe</code>&#x3001;<code>-o wide</code>&#x3001;<code>-o yaml</code>;</li>
+<li>&#x521B;&#x5EFA; Service&#xFF0C;<code>kubectl expose</code>&#xFF1B;</li>
+<li>&#x8BBE;&#x7F6E;&#x526F;&#x672C;&#x96C6;&#xFF0C;<code>replicaset</code>&#xFF1B;</li>
+<li>&#x67E5;&#x770B;&#x5BF9;&#x8C61;&#x652F;&#x6301;&#x7684;&#x5C5E;&#x6027; <code>kubectl explain pods</code>&#xFF0C;<code>kubectl explain pod.spec</code></li>
+</ul>
+</li>
+<li>&#x5411;&#x4E0A;&#x548C;&#x5411;&#x4E0B;&#x6269;&#x5C55;&#x90E8;&#x7F72;&#x3002;<ul>
+<li>&#x6269;&#x5BB9; Pod&#xFF0C;&#x8BBE;&#x7F6E;&#x526F;&#x672C;&#x96C6;&#xFF0C;<code>kubectl scale</code>&#x3001;<code>kubectl edit</code>&#xFF1B;</li>
+<li>&#x81EA;&#x52A8;&#x6269;&#x5BB9; Pod&#xFF0C;&#x6C34;&#x5E73;&#x7F29;&#x653E;&#xFF0C;&#x6BD4;&#x4F8B;&#x7F29;&#x653E;&#xFF0C;&#x6839;&#x636E; CPU&#x3001;&#x5185;&#x5B58;&#x7F29;&#x653E;&#xFF0C;<code>kubectl autoscale</code>&#xFF1B;</li>
+<li>DaemonSet</li>
+</ul>
+</li>
+<li>&#x5B9E;&#x73B0;&#x6EDA;&#x52A8;&#x66F4;&#x65B0;&#x548C;&#x56DE;&#x6EDA;<ul>
+<li>&#x66F4;&#x6362;&#x955C;&#x50CF;&#x7248;&#x672C;&#x3001;&#x66F4;&#x65B0; Pod&#xFF0C;<code>kubectl set image</code>&#xFF1B;</li>
+<li>&#x8BBE;&#x7F6E;&#x6EDA;&#x52A8;&#x66F4;&#x65B0;&#x901F;&#x5EA6;&#xFF0C;<code>maxSurge</code>&#x3001;<code>maxUnavailable</code>&#xFF1B;</li>
+<li>&#x6682;&#x505C;&#x548C;&#x6062;&#x590D;&#x66F4;&#x65B0;&#xFF0C;<code>kubectl rollout pause</code> &#x3001;<code>kubectl rollout resume</code>&#xFF1B;</li>
+<li>&#x56DE;&#x6EDA;&#x65E7;&#x7248;&#x672C;&#xFF0C;<code>kubectl rollout undo</code>&#xFF1B;</li>
+</ul>
+</li>
+<li>&#x4F7F;&#x7528;&#x6807;&#x7B7E;&#x9009;&#x62E9;&#x5404;&#x79CD;&#x5BF9;&#x8C61;&#x4EE5;&#x53CA;&#x8C03;&#x5EA6;<ul>
+<li>&#x4E86;&#x89E3; label&#x3001;selector&#x3001;nodeSelector&#xFF1B;</li>
+<li>&#x67E5;&#x8BE2; label&#x3001;&#x9009;&#x62E9; label&#x3001;&#x4F7F;&#x7528;&#x9009;&#x62E9;&#x5668;&#x8C03;&#x5EA6; Pod&#xFF1B;</li>
+<li>&#x9009;&#x62E9;&#x5668;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x7B49;&#x503C;&#x9009;&#x62E9;&#x3001;&#x96C6;&#x5408;&#x9009;&#x62E9;&#xFF1B;</li>
+</ul>
+</li>
+<li>&#x914D;&#x7F6E;&#x6C61;&#x70B9;&#x548C;&#x5BB9;&#x5FCD;&#x5EA6;<ul>
+<li>&#x4EB2;&#x548C;&#x6027;&#x548C;&#x53CD;&#x4EB2;&#x548C;&#x6027;</li>
+<li>&#x914D;&#x7F6E;&#x6C61;&#x70B9;&#x548C;&#x5BB9;&#x5FCD;&#x5EA6;</li>
+<li>&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x6C61;&#x70B9;&#x3001;master &#x7684;&#x8C03;&#x5EA6;&#x914D;&#x7F6E;</li>
+</ul>
+</li>
+<li>Job &#x548C; CronJob<ul>
+<li>&#x4E86;&#x89E3; Job&#xFF0C;&#x5B8C;&#x6210;&#x6570;(conpetions)&#x3001;&#x5DE5;&#x4F5C;&#x961F;&#x5217;(parallelism)&#x3001;&#x63A7;&#x5236;&#x5E76;&#x884C;&#x6027;&#x3001;&#x6E05;&#x7406; Job&#x3002;</li>
+<li>CronJob &#x7684;&#x65F6;&#x95F4;&#x8868;&#x793A;</li>
+</ul>
+</li>
+<li>StatefulSet<ul>
+<li>&#x6709;&#x72B6;&#x6001;&#x7684;&#x5E94;&#x7528;</li>
+</ul>
+</li>
+</ul>
+<p>&#x638C;&#x63E1;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x7684;&#x4F7F;&#x7528;&#xFF1A;</p>
+<p>kubectl &#x539F;&#x7406;&#x662F;&#x8BF7;&#x6C42; apiserver &#x5B8C;&#x6210;&#x67D0;&#x4E9B;&#x64CD;&#x4F5C;&#xFF0C;&#x65E5;&#x5E38;&#x64CD;&#x4F5C;&#x4E2D;&#xFF0C;&#x6700;&#x5E38;&#x7528;&#x7684;&#x5C31;&#x662F; kubectl&#x3002;</p>
+<p><code>kubectl create {&#x5BF9;&#x8C61;}</code> &#xFF0C;&#x521B;&#x5EFA; deployment&#x3001;job &#x7B49;&#x5BF9;&#x8C61;&#x3002;</p>
+<p><code>kubectl apply -f</code> &#x5E94;&#x7528; yaml &#x6587;&#x4EF6;&#xFF0C;&#x5B8C;&#x6210;&#x67D0;&#x4E9B;&#x64CD;&#x4F5C;&#x3002;</p>
+<p><code>kubectl get {&#x5BF9;&#x8C61;}</code> &#x67E5;&#x8BE2;&#x5BF9;&#x8C61;&#x3002;</p>
+<p><code>kubectl scale {&#x5BF9;&#x8C61;}</code> &#x4F38;&#x7F29;&#x5BF9;&#x8C61;&#x6570;&#x91CF;(ReplicaSet)&#x3002;</p>
+<p><code>kubectl expose</code> &#x521B;&#x5EFA; Service&#x3002;</p>
+<p><code>kubectl describe</code> &#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#x8BE6;&#x7EC6;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<p><code>kubectl exec</code> &#x5728;&#x5BF9;&#x8C61;&#x4E2D;&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF0C;&#x4F8B;&#x5982; pod&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x75F4;&#x8005;&#x5DE5;&#x826F; 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x6863;&#x6700;&#x540E;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF1A;
+2021-11-14 13:54:43
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../2.deploy/5.dashboard.html" class="navigation navigation-prev " aria-label="Previous page: 2.5 Dashboard">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="./" class="navigation navigation-next " aria-label="Next page: 导读">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.Pod部署和调度","level":"1.4","depth":1,"next":{"title":"导读","level":"1.4.1","depth":2,"path":"3.pod/README.md","ref":"3.pod/README.md","articles":[]},"previous":{"title":"2.5 Dashboard","level":"1.3.6","depth":2,"path":"2.deploy/5.dashboard.md","ref":"2.deploy/5.dashboard.md","articles":[]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","anchor-navigation-ex","mermaid-gb3","insert-logo","chapter-fold","advanced-emoji","github","splitter","alerts","popup","prism","-highlight","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 痴者工良 2021","modify_label":"文档最后更新时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"lang":{"flow":"typescript","shell":"bash"},"ignore":["mermaid","eval-js"],"css":["prismjs/themes/prism.css"],"js":["prismjs/prism.js","prismjs/components.js","prismjs/components/prism-go.min.js","prismjs/components/prism-yaml.min.js","prismjs/components/prism-bash.min.js","prismjs/components/prism-shell-session.min.js"]},"github":{"url":"https://github.com/whuanle/kubernetes"},"livereload":{},"splitter":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":false,"showLevel":false},"alerts":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 50px; min-height: 50px","url":"/images/logo.jpg"}},"theme":"default","author":"痴者工良","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Kubernetes - 痴者工良","language":"zh-hans","links":{"sidebar":{"痴者工良的博客":"https://www.whuanle.cn"}},"gitbook":"*","description":"这是一本关于 Kubernetes 的书，作者 痴者工良"},"file":{"path":"3.pod/README.md","mtime":"2021-11-14T05:54:43.625Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-16T23:21:22.294Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
