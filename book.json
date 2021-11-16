@@ -9,7 +9,9 @@
     "github",
     "splitter",
     "alerts",
-    "popup"
+    "popup",
+    "prism",
+    "-highlight"
   ],
   "title": "Kubernetes - 痴者工良",
   "author": "痴者工良",
@@ -27,15 +29,31 @@
       "modify_format": "YYYY-MM-DD HH:mm:ss"
     },
     "insert-logo": {
-      "url": "/.images/logo.jpg",
+      "url": "/images/logo.jpg",
       "style": "background: none; max-height: 50px; min-height: 50px"
     },
     "github": {
       "url": "https://github.com/whuanle/kubernetes"
     },
     "prism": {
+      "lang": {
+        "flow": "typescript",
+        "shell": "bash"
+      },
+      "ignore": [
+        "mermaid",
+        "eval-js"
+      ],
       "css": [
-        "prismjs/themes/prism-solarizedlight.css"
+        "prismjs/themes/prism.css"
+      ],
+      "js": [
+        "prismjs/prism.js",
+        "prismjs/components.js",
+        "prismjs/components/prism-go.min.js",
+        "prismjs/components/prism-yaml.min.js",
+        "prismjs/components/prism-bash.min.js",
+        "prismjs/components/prism-shell-session.min.js"
       ]
     },
     "anchor-navigation-ex": {

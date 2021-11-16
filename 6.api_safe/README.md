@@ -1,4 +1,8 @@
-# 6.安全
+# 6.Kubernetes 与 安全
+
+
+
+**本章待写**
 
 
 
@@ -20,22 +24,6 @@ kubeconfig的认证方式
 
 密钥和分发凭证
 
-
-
-待写内容
-
-安全
-
-解释API请求的流程。
-
-配置授权规则。
-
-检查认证政策。
-
-使用网络策略限制网络流量。
-
-
-
 netwotk policy
 
 上下文，命名空间隔离网络
@@ -43,20 +31,6 @@ netwotk policy
 集群切换和上下文
 
 
-
-
-
-11.2RBAC鉴权
-
-了解kubernetes的鉴权方式
-
-配置RBAC鉴权
-
-11.3资源限制
-
-LimitRange
-
-ResourceQuota
 
 
 
