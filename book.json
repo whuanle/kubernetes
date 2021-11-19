@@ -11,7 +11,8 @@
     "alerts",
     "popup",
     "prism",
-    "-highlight"
+    "-highlight",
+    "-livereload"
   ],
   "title": "Kubernetes - 痴者工良",
   "author": "痴者工良",
