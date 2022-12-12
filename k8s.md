@@ -1,5 +1,67 @@
 ## K8S 快捷命令
 
+Kuberentes 提供了 `kubectl explain` 命令，可以帮助我们快速了解创建一个对象的 YAML 需要哪几部分内容。例如创建 Pod 的 YAML 定义如下：
+
+```bash
+oot@master:~# kubectl explain pod
+KIND:     Pod
+VERSION:  v1
+
+DESCRIPTION:
+     Pod is a collection of containers that can run on a host. This resource is
+     created by clients and scheduled onto hosts.
+
+FIELDS:
+   apiVersion	<string>
+     APIVersion defines the versioned schema of this representation of an
+     object. Servers should convert recognized schemas to the latest internal
+     value, and may reject unrecognized values. More info:
+     https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+
+   kind	<string>
+     Kind is a string value representing the REST resource this object
+     represents. Servers may infer this from the endpoint the client submits
+     requests to. Cannot be updated. In CamelCase. More info:
+     https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+
+   metadata	<Object>
+     Standard object's metadata. More info:
+     https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+
+   spec	<Object>
+     Specification of the desired behavior of the pod. More info:
+     https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
+
+   status	<Object>
+     Most recently observed status of the pod. This data may not be up to date.
+     Populated by the system. Read-only. More info:
+     https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
+```
+
+如果要查更深一层的字段，则可以：
+
+```bash
+root@master:~# kubectl explain pod.kind
+KIND:     Pod
+VERSION:  v1
+
+FIELD:    kind <string>
+
+DESCRIPTION:
+     Kind is a string value representing the REST resource this object
+     represents. Servers may infer this from the endpoint the client submits
+     requests to. Cannot be updated. In CamelCase. More info:
+     https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+```
+
+> **[Info] 提示**
+>
+> 此方式查询到的文档，其列举的字段不一定都是 Pod YAML 所需要的，还需要读者多练习多学习，从文档中补充需要的信息。
+
+
+
+
+
 **使用 Json 表达式筛选字段**
 
 如果是单个对象，例如 Pod test，那么获取其命名空间：
