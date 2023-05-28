@@ -11,6 +11,7 @@
     "alerts",
     "popup",
     "prism",
+    "scripts",
     "-highlight",
     "-livereload"
   ],
@@ -58,8 +59,13 @@
       ]
     },
     "anchor-navigation-ex": {
-      "showLevel": false, 
-      "showGoTop": false 
+      "showLevel": false,
+      "showGoTop": false
+    },
+    "scripts": {
+      "files": [
+        "./tj.js"
+      ]
     }
   }
 }
