@@ -11,8 +11,8 @@
     "alerts",
     "popup",
     "prism",
-    "scripts",
-    "icp",
+    "hide-element",
+    "head-append",
     "-highlight",
     "-livereload"
   ],
@@ -22,12 +22,13 @@
   "language": "zh-hans",
   "links": {
     "sidebar": {
-      "痴者工良的博客": "https://www.whuanle.cn"
+      "痴者工良的博客": "https://www.whuanle.cn",
+      "粤ICP备18051778号":"https://beian.miit.gov.cn/"
     }
   },
   "pluginsConfig": {
     "tbfed-pagefooter": {
-      "copyright": "Copyright &copy 痴者工良 2021",
+      "copyright": "Copyright &copy 痴者工良 2023",
       "modify_label": "文档最后更新时间：",
       "modify_format": "YYYY-MM-DD HH:mm:ss"
     },
@@ -53,6 +54,7 @@
       "js": [
         "prismjs/prism.js",
         "prismjs/components.js",
+        "prismjs/components/prism-csharp.min.js",
         "prismjs/components/prism-go.min.js",
         "prismjs/components/prism-yaml.min.js",
         "prismjs/components/prism-bash.min.js",
@@ -63,13 +65,18 @@
       "showLevel": false,
       "showGoTop": false
     },
-    "scripts": {
-      "files": [
-        "./tj.js"
+    "head-append": {
+      "code": [
+        "<SCRIPTTAG>",
+        "var _hmt = _hmt || [];",
+        "(function() {",
+        "  var hm = document.createElement(\"script\");",
+        "  hm.src = \"https://hm.baidu.com/hm.js?d06cb76fda572dae6307acadf95f2443\";",
+        "  var s = document.getElementsByTagName(\"script\")[0]; ",
+        "  s.parentNode.insertBefore(hm, s);",
+        "})();",
+        "</SCRIPTTAG>"
       ]
-    },
-    "icp": {
-      "number": "粤ICP备18051778号"
     }
   }
 }
